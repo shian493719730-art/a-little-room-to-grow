@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-22",
+  "languages": [
+    "zh-CN",
+    "en"
+  ],
+  "keys": 75,
+  "introBeforeActions": true,
+  "officialGivingLink": "https://www.cambridge-pledge.org/pledge",
+  "briefLink": "https://www.east2046.com/capcut-cambridge-hackathon?view=brief",
+  "twelveLogosAndMembershipLines": true,
+  "noSupportInBackMarkup": true,
+  "disabledAfterReveal": true,
+  "distinctEndings": {
+    "paid": {
+      "money": 740,
+      "flower": 0,
+      "title": "The bills are settled.\nThe flower could not stay."
+    },
+    "flower": {
+      "money": 670,
+      "flower": 10,
+      "title": "The flower keeps growing.\nThe bills remain open."
+    },
+    "both": {
+      "money": 40,
+      "flower": 0,
+      "title": "The bills remain open.\nThe windowsill is quiet."
+    },
+    "win": {
+      "money": 705,
+      "flower": 10,
+      "title": "The bills are covered.\nThe flower keeps growing."
+    }
+  },
+  "engineUnchanged": true
+}

@@ -1,0 +1,360 @@
+{
+  "export_date": "2026-10-28",
+  "repository_visibility": "private",
+  "sites": [
+    {
+      "title": "A Little Room to Grow · The Cambridge Room",
+      "directory": "a-little-room-to-grow-3d-cambridge",
+      "original_site_url": "https://a-little-room-to-grow-3d-cambridge.shian493719370.chatgpt.site",
+      "original_site_project_id": "appgprj_6ada28e882b08191930b8d6254771a4c",
+      "source_commit_sha": "201ef386edc422d1951b6afd6778d06e40878512",
+      "saved_version_number": 2,
+      "runtime": "静态 HTML / JavaScript",
+      "local_start": "在 `./a-little-room-to-grow-3d-cambridge` 目录运行 `python3 -m http.server 8000 --directory dist`，然后访问 http://localhost:8000。",
+      "files": {
+        "a-little-room-to-grow-3d-cambridge/.openai/hosting.json": {
+          "sha256": "0a4b3dfe3bcce9948f94f2229c439c23df5c98becb12de61d309bc3b429144b6",
+          "source_sha256": "0a4b3dfe3bcce9948f94f2229c439c23df5c98becb12de61d309bc3b429144b6"
+        },
+        "a-little-room-to-grow-3d-cambridge/README.md": {
+          "sha256": "bcc151dd29ceef6a4487d8df6937f4054212b736ce48573906365d5bb5947d6a",
+          "source_sha256": "bcc151dd29ceef6a4487d8df6937f4054212b736ce48573906365d5bb5947d6a"
+        },
+        "a-little-room-to-grow-3d-cambridge/assets/cambridge-pledge-official.svg": {
+          "sha256": "cdba8ba299fe20f11747e6b4641177c056efd547be8a0bdc13af60a84fee5e21",
+          "source_sha256": "cdba8ba299fe20f11747e6b4641177c056efd547be8a0bdc13af60a84fee5e21"
+        },
+        "a-little-room-to-grow-3d-cambridge/assets/pledge-logo-supplied.png": {
+          "sha256": "8a772c8a67f1306e48942bffd755eb4af3a56ad06c53870bcdff01a100da3992",
+          "source_sha256": "8a772c8a67f1306e48942bffd755eb4af3a56ad06c53870bcdff01a100da3992"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/app.js": {
+          "sha256": "d4e516f0103df6424af192c64ab4d4bf9520d79d62f782c724d7699033efd9c8",
+          "source_sha256": "d4e516f0103df6424af192c64ab4d4bf9520d79d62f782c724d7699033efd9c8"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/assets/pledge-logo-supplied.png": {
+          "sha256": "8a772c8a67f1306e48942bffd755eb4af3a56ad06c53870bcdff01a100da3992",
+          "source_sha256": "8a772c8a67f1306e48942bffd755eb4af3a56ad06c53870bcdff01a100da3992"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/home-bridge.js": {
+          "sha256": "ac88d397c9c27266846f0e06f596274b5ca9f24a830d81e270e76671774bd6a0",
+          "source_sha256": "ac88d397c9c27266846f0e06f596274b5ca9f24a830d81e270e76671774bd6a0"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/home.html": {
+          "sha256": "3be8608bfafc9305d1d2211603ae78bb792f93ff7762d8a5374e22e89a60a3b7",
+          "source_sha256": "3be8608bfafc9305d1d2211603ae78bb792f93ff7762d8a5374e22e89a60a3b7"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/index.html": {
+          "sha256": "d0c99521b9b60ef9a0067ce0fab6be17737d62d5dbd54d7cf5c91f3bc392ab69",
+          "source_sha256": "d0c99521b9b60ef9a0067ce0fab6be17737d62d5dbd54d7cf5c91f3bc392ab69"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/integration.css": {
+          "sha256": "e61f26dccf9e6e1cc9c982ae83337c71325ff20b4c24cf44101018e3dff450a3",
+          "source_sha256": "e61f26dccf9e6e1cc9c982ae83337c71325ff20b4c24cf44101018e3dff450a3"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/room1.html": {
+          "sha256": "21e1d5d233a68b57e999a903caf7621017c04977dc1353f21f71264d1be3c10e",
+          "source_sha256": "21e1d5d233a68b57e999a903caf7621017c04977dc1353f21f71264d1be3c10e"
+        },
+        "a-little-room-to-grow-3d-cambridge/dist/room2.html": {
+          "sha256": "2d300a3ee35a5cb6048f715c473856b769a1df29ce3532f3af719c9284897670",
+          "source_sha256": "2d300a3ee35a5cb6048f715c473856b769a1df29ce3532f3af719c9284897670"
+        },
+        "a-little-room-to-grow-3d-cambridge/export-tools/build-standalone.mjs": {
+          "sha256": "2ca652e87546f25a1f93de67cdedcb621e7d5133c2fe04bd0d19728fa3e73dbf",
+          "source_sha256": "2ca652e87546f25a1f93de67cdedcb621e7d5133c2fe04bd0d19728fa3e73dbf"
+        },
+        "a-little-room-to-grow-3d-cambridge/index.html": {
+          "sha256": "dcfceac297350ff97cbe542a7043c70f611c022d762a27fd70e3af2d5e10c649",
+          "source_sha256": "dcfceac297350ff97cbe542a7043c70f611c022d762a27fd70e3af2d5e10c649"
+        },
+        "a-little-room-to-grow-3d-cambridge/skills/build-resource-story/scripts/verify.cjs": {
+          "sha256": "118cc3249d7e4735421e0c1e36f916efb96f4a3d91d6e7c4ec3761b7e0de5bf2",
+          "source_sha256": "118cc3249d7e4735421e0c1e36f916efb96f4a3d91d6e7c4ec3761b7e0de5bf2"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/app.js": {
+          "sha256": "d4e516f0103df6424af192c64ab4d4bf9520d79d62f782c724d7699033efd9c8",
+          "source_sha256": "d4e516f0103df6424af192c64ab4d4bf9520d79d62f782c724d7699033efd9c8"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/audio.js": {
+          "sha256": "fb3cb6ba01e4c36ea4b5215374ff42e6b8b9e69a0d04368ba419f147a595ed82",
+          "source_sha256": "fb3cb6ba01e4c36ea4b5215374ff42e6b8b9e69a0d04368ba419f147a595ed82"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/content.js": {
+          "sha256": "ba65f1dc47d441dbe0b5bc565d0a56783645613a0a152f0a1a543d241c098f53",
+          "source_sha256": "ba65f1dc47d441dbe0b5bc565d0a56783645613a0a152f0a1a543d241c098f53"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/endings.js": {
+          "sha256": "f01be700c176e085305b81b4165f5d1171ed9b7d05b7528aca905377efc89d63",
+          "source_sha256": "f01be700c176e085305b81b4165f5d1171ed9b7d05b7528aca905377efc89d63"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/home-bridge.js": {
+          "sha256": "ac88d397c9c27266846f0e06f596274b5ca9f24a830d81e270e76671774bd6a0",
+          "source_sha256": "ac88d397c9c27266846f0e06f596274b5ca9f24a830d81e270e76671774bd6a0"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/home-original.html": {
+          "sha256": "dcfceac297350ff97cbe542a7043c70f611c022d762a27fd70e3af2d5e10c649",
+          "source_sha256": "dcfceac297350ff97cbe542a7043c70f611c022d762a27fd70e3af2d5e10c649"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/integration-shell.html": {
+          "sha256": "d450feaa7692ac6ba9aa321e6243f645d55697a312a617db250a0868dd260f42",
+          "source_sha256": "d450feaa7692ac6ba9aa321e6243f645d55697a312a617db250a0868dd260f42"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/integration.css": {
+          "sha256": "e61f26dccf9e6e1cc9c982ae83337c71325ff20b4c24cf44101018e3dff450a3",
+          "source_sha256": "e61f26dccf9e6e1cc9c982ae83337c71325ff20b4c24cf44101018e3dff450a3"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/journey.js": {
+          "sha256": "924befe8800da8fdee89c50054c4d589125b96b3ff456a6c415c44d38d3ec14e",
+          "source_sha256": "924befe8800da8fdee89c50054c4d589125b96b3ff456a6c415c44d38d3ec14e"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/literature.js": {
+          "sha256": "59764f89eae36967ab0b9a670cf52b7ec6648c26453e8c65174324cb01dd9a21",
+          "source_sha256": "59764f89eae36967ab0b9a670cf52b7ec6648c26453e8c65174324cb01dd9a21"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/literature.json": {
+          "sha256": "335add522433b8f9aa39c0a6a5000309f24bf57235a9ee5af270fc0580047eb2",
+          "source_sha256": "335add522433b8f9aa39c0a6a5000309f24bf57235a9ee5af270fc0580047eb2"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/research-zh.json": {
+          "sha256": "66546ff722309ada955bec0ed373b4a5e4356db2865b015d4aa35685a95efeda",
+          "source_sha256": "66546ff722309ada955bec0ed373b4a5e4356db2865b015d4aa35685a95efeda"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/room.html": {
+          "sha256": "c4d607a284a34f946b46ca4905af54fc47ec239f3c6eeb72b0a0310b7e1a2b3b",
+          "source_sha256": "c4d607a284a34f946b46ca4905af54fc47ec239f3c6eeb72b0a0310b7e1a2b3b"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/room1.html": {
+          "sha256": "21e1d5d233a68b57e999a903caf7621017c04977dc1353f21f71264d1be3c10e",
+          "source_sha256": "21e1d5d233a68b57e999a903caf7621017c04977dc1353f21f71264d1be3c10e"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/room2.html": {
+          "sha256": "2d300a3ee35a5cb6048f715c473856b769a1df29ce3532f3af719c9284897670",
+          "source_sha256": "2d300a3ee35a5cb6048f715c473856b769a1df29ce3532f3af719c9284897670"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/scene.js": {
+          "sha256": "5392237b2f6e697b6f37b6f341622d92cf2c0c10488e6ca338734a885c6e44b4",
+          "source_sha256": "5392237b2f6e697b6f37b6f341622d92cf2c0c10488e6ca338734a885c6e44b4"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/shell.html": {
+          "sha256": "3855f8447b70cf524c152820e4001052e35b8f3a5807fccd34834dd40df65d02",
+          "source_sha256": "3855f8447b70cf524c152820e4001052e35b8f3a5807fccd34834dd40df65d02"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/styles.css": {
+          "sha256": "46916fc44d4694ac9b6324edb22a11949348a8ab5f7751a3a0029a9bc684ca85",
+          "source_sha256": "46916fc44d4694ac9b6324edb22a11949348a8ab5f7751a3a0029a9bc684ca85"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/support-cards.js": {
+          "sha256": "3bdd612dcca93ae035315b9a885b117da7d7a1e4dd2e04c64a4438bc230bc260",
+          "source_sha256": "3bdd612dcca93ae035315b9a885b117da7d7a1e4dd2e04c64a4438bc230bc260"
+        },
+        "a-little-room-to-grow-3d-cambridge/src/ui.js": {
+          "sha256": "ac339adff452c933b73386f85c6a69d59587fc78d27e8d631f7911d466211a1f",
+          "source_sha256": "ac339adff452c933b73386f85c6a69d59587fc78d27e8d631f7911d466211a1f"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/3d1-entry-desktop.png": {
+          "sha256": "d1efa8ca1fd53f2b5a989904cbe12be5ae5d5315805af62e6cbc35e792edd7e0",
+          "source_sha256": "d1efa8ca1fd53f2b5a989904cbe12be5ae5d5315805af62e6cbc35e792edd7e0"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/3d2-success-desktop.png": {
+          "sha256": "f7d0f4a6372b443310a2733b4c331400ecc30797342915638d2fc507002e421f",
+          "source_sha256": "f7d0f4a6372b443310a2733b4c331400ecc30797342915638d2fc507002e421f"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/animation.cjs": {
+          "sha256": "91129353d9c242b9ed05b1214cb0ab2b8840e580418c30206758332276b38ad5",
+          "source_sha256": "91129353d9c242b9ed05b1214cb0ab2b8840e580418c30206758332276b38ad5"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/build-publish.mjs": {
+          "sha256": "06ae2fe815e20e6b51c9c558b6c8593fa64057e4828d9dbb7d04de4a0bf19a07",
+          "source_sha256": "06ae2fe815e20e6b51c9c558b6c8593fa64057e4828d9dbb7d04de4a0bf19a07"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/build.mjs": {
+          "sha256": "309aaf7820c79be6071f746d5a3f11fc5c72288c21160864c89f83e693689513",
+          "source_sha256": "309aaf7820c79be6071f746d5a3f11fc5c72288c21160864c89f83e693689513"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/ending-flow.cjs": {
+          "sha256": "87ad4d881a35d509d6a7812ef34b298e5961cfa1d1be27645da8494142fd9c07",
+          "source_sha256": "87ad4d881a35d509d6a7812ef34b298e5961cfa1d1be27645da8494142fd9c07"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/ending-flow.json": {
+          "sha256": "d4bb9e97ed1c76ecde8985e3fae1e1a988c3a7936e078c18f665e6e62272933a",
+          "source_sha256": "d4bb9e97ed1c76ecde8985e3fae1e1a988c3a7936e078c18f665e6e62272933a"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/engine-source.js": {
+          "sha256": "d260d24a10d7ea9d4173de61a2a3b4d44511127390e76a9517b9d5b945e64ab4",
+          "source_sha256": "d260d24a10d7ea9d4173de61a2a3b4d44511127390e76a9517b9d5b945e64ab4"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/integration-browser-qa.json": {
+          "sha256": "a240d5d577aa0cd7ff34e31e2ea6d5e5087944ceda772ddfb33ff56027360427",
+          "source_sha256": "a240d5d577aa0cd7ff34e31e2ea6d5e5087944ceda772ddfb33ff56027360427"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/journey.cjs": {
+          "sha256": "1b11d9358abe3a908a9a623156987b7410e052e8fdb32a6ab8009f5e62985bd6",
+          "source_sha256": "1b11d9358abe3a908a9a623156987b7410e052e8fdb32a6ab8009f5e62985bd6"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/journey.json": {
+          "sha256": "db43b90cfe9fadf022c8cba4a773b7d5bac590b167be0bc607ed47404a91d497",
+          "source_sha256": "db43b90cfe9fadf022c8cba4a773b7d5bac590b167be0bc607ed47404a91d497"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/literature.cjs": {
+          "sha256": "0bb832d1437aceb11ea549099cddce743704ba6753175c21d1f9760944450cd5",
+          "source_sha256": "0bb832d1437aceb11ea549099cddce743704ba6753175c21d1f9760944450cd5"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/media-i18n.cjs": {
+          "sha256": "4ef82d174db948624872d7db899702b0d89043c30e3444ec7e06da21e91c3ad3",
+          "source_sha256": "4ef82d174db948624872d7db899702b0d89043c30e3444ec7e06da21e91c3ad3"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/original-preservation.json": {
+          "sha256": "17a751180cb89ab87bad5efa08af11ce2269e74e14790f26b5046968d27b4cf2",
+          "source_sha256": "9ffdb725cafe383f83c560092c9502ef4dcbf65d49a3f95a165a4fc1415c888f"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/preservation-check.json": {
+          "sha256": "e97c1bb71c7161fe60840c52f581383c20eb0219ff53db4c897e90d2e7f5f162",
+          "source_sha256": "e97c1bb71c7161fe60840c52f581383c20eb0219ff53db4c897e90d2e7f5f162"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/support-cards.cjs": {
+          "sha256": "9644c27eb7c18def6971db616c4ec6727f34c28c151056a0612903079ea7e80c",
+          "source_sha256": "9644c27eb7c18def6971db616c4ec6727f34c28c151056a0612903079ea7e80c"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/verification.json": {
+          "sha256": "24d64885d64917886447221af2d5e932149c4f20f456d47255a3be0652d813bc",
+          "source_sha256": "24d64885d64917886447221af2d5e932149c4f20f456d47255a3be0652d813bc"
+        },
+        "a-little-room-to-grow-3d-cambridge/tests/verify.cjs": {
+          "sha256": "aabd45df18e6bf9edb9f9f75196b797ff67529d97a40d4acd57fb3f9d45d1c19",
+          "source_sha256": "aabd45df18e6bf9edb9f9f75196b797ff67529d97a40d4acd57fb3f9d45d1c19"
+        },
+        "a-little-room-to-grow-3d-cambridge/vendor/LICENSE-three.txt": {
+          "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+          "source_sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+        },
+        "a-little-room-to-grow-3d-cambridge/vendor/OrbitControls.js": {
+          "sha256": "faabb4e8dfd9235ee4a9fd7c9a3d75f90f1689dbd4944bd6fd32117dacec5f93",
+          "source_sha256": "faabb4e8dfd9235ee4a9fd7c9a3d75f90f1689dbd4944bd6fd32117dacec5f93"
+        },
+        "a-little-room-to-grow-3d-cambridge/vendor/three.core.js": {
+          "sha256": "368dc78835287709a48939e8eb9a7a61d0732098bdf916e56840d458aae9ccf3",
+          "source_sha256": "368dc78835287709a48939e8eb9a7a61d0732098bdf916e56840d458aae9ccf3"
+        },
+        "a-little-room-to-grow-3d-cambridge/vendor/three.module.js": {
+          "sha256": "61134198639a10885daf893fb29669ca26386e2a4cde76e8399f51e329f741f2",
+          "source_sha256": "61134198639a10885daf893fb29669ca26386e2a4cde76e8399f51e329f741f2"
+        }
+      }
+    },
+    {
+      "title": "A little room for hope",
+      "directory": "cambridge-room-for-hope",
+      "original_site_url": "https://cambridge-room-for-hope.shian493719370.chatgpt.site",
+      "original_site_project_id": "appgprj_6ada229d1a388191916ee500e65e991d",
+      "source_commit_sha": "9663ca5c286cea3b5192629d1a31158a234a8a62",
+      "saved_version_number": 1,
+      "runtime": "静态 HTML / JavaScript",
+      "local_start": "在 `./cambridge-room-for-hope` 目录运行 `python3 -m http.server 8000 --directory dist`，然后访问 http://localhost:8000。",
+      "files": {
+        "cambridge-room-for-hope/.openai/hosting.json": {
+          "sha256": "fc61326c5a15a90f6ddab651da54a89d20a12702e266e472417ae86f2bb1fe5a",
+          "source_sha256": "fc61326c5a15a90f6ddab651da54a89d20a12702e266e472417ae86f2bb1fe5a"
+        },
+        "cambridge-room-for-hope/dist/index.html": {
+          "sha256": "cce9f2f5eb31fe6143607afc3ba592d90923c8cbcdb3e48ce1c09fe305711e94",
+          "source_sha256": "cce9f2f5eb31fe6143607afc3ba592d90923c8cbcdb3e48ce1c09fe305711e94"
+        }
+      }
+    },
+    {
+      "title": "A Little Room to Grow | Cambridge Pledge",
+      "directory": "a-little-room-to-grow-cambridge",
+      "original_site_url": "https://a-little-room-to-grow-cambridge.shian493719370.chatgpt.site",
+      "original_site_project_id": "appgprj_6ada1c89e9448191a40aa748063c7b36",
+      "source_commit_sha": "86f5d1febb77de185012055d583855bee92b18f4",
+      "saved_version_number": 7,
+      "runtime": "静态 HTML / JavaScript",
+      "local_start": "在 `./a-little-room-to-grow-cambridge` 目录运行 `python3 -m http.server 8000 --directory dist`，然后访问 http://localhost:8000。",
+      "files": {
+        "a-little-room-to-grow-cambridge/.openai/hosting.json": {
+          "sha256": "4ea93c3bfc727fbe0db34efbf7e62e22d93a41f28a34fb202f59f89152d4cbb6",
+          "source_sha256": "4ea93c3bfc727fbe0db34efbf7e62e22d93a41f28a34fb202f59f89152d4cbb6"
+        },
+        "a-little-room-to-grow-cambridge/dist/index.html": {
+          "sha256": "31cbce639959e873ad2152f3b49baa39ed4120e632c231656c6cab4d541db32c",
+          "source_sha256": "31cbce639959e873ad2152f3b49baa39ed4120e632c231656c6cab4d541db32c"
+        }
+      }
+    },
+    {
+      "title": "留一点，给花",
+      "directory": "a-little-room-to-grow",
+      "original_site_url": "https://a-little-room-to-grow.shian493719370.chatgpt.site",
+      "original_site_project_id": "appgprj_6ad938c8237c8191ab04ef3a6cdd9aad",
+      "source_commit_sha": "dd46a46c995c985bf3f98e33350d61a76396f380",
+      "saved_version_number": 2,
+      "runtime": "静态 HTML / JavaScript",
+      "local_start": "在 `./a-little-room-to-grow` 目录运行 `python3 -m http.server 8000 --directory dist`，然后访问 http://localhost:8000。",
+      "files": {
+        "a-little-room-to-grow/.openai/hosting.json": {
+          "sha256": "1e1cbe69f0309fd09b710022b0981527ea3bcb2e15020833c347e86e2a03f3b1",
+          "source_sha256": "1e1cbe69f0309fd09b710022b0981527ea3bcb2e15020833c347e86e2a03f3b1"
+        },
+        "a-little-room-to-grow/check-balance.cjs": {
+          "sha256": "d6743ef881644f660e70fe599f5ce0ae02ed67cc76ed5c2bfbd024d644ee7243",
+          "source_sha256": "d6743ef881644f660e70fe599f5ce0ae02ed67cc76ed5c2bfbd024d644ee7243"
+        },
+        "a-little-room-to-grow/dist/evidence-data.js": {
+          "sha256": "dee59d815932503a472ab652b27a74e5afe3b4056bf6046f7714e022300f9130",
+          "source_sha256": "dee59d815932503a472ab652b27a74e5afe3b4056bf6046f7714e022300f9130"
+        },
+        "a-little-room-to-grow/dist/evidence.js": {
+          "sha256": "3c2a24ecc0b8241b358e92600641ca800b272cc189b10d90a939e9e8a3cdba27",
+          "source_sha256": "3c2a24ecc0b8241b358e92600641ca800b272cc189b10d90a939e9e8a3cdba27"
+        },
+        "a-little-room-to-grow/dist/game.js": {
+          "sha256": "57360a4f6db4b5c47f0ac37ba9a089e5984e9a4dc384bba077b47037f63a8631",
+          "source_sha256": "57360a4f6db4b5c47f0ac37ba9a089e5984e9a4dc384bba077b47037f63a8631"
+        },
+        "a-little-room-to-grow/dist/index.html": {
+          "sha256": "b33319afb8b8be9808517d00988936cf3c45dceba22be953dd4995f07ede56d4",
+          "source_sha256": "b33319afb8b8be9808517d00988936cf3c45dceba22be953dd4995f07ede56d4"
+        },
+        "a-little-room-to-grow/dist/pledge-logo.jpg": {
+          "sha256": "024e80ffacefb869d684bb2ab524370b8b8fb57e4204b0379ad9d67218266da9",
+          "source_sha256": "024e80ffacefb869d684bb2ab524370b8b8fb57e4204b0379ad9d67218266da9"
+        },
+        "a-little-room-to-grow/dist/research-evidence.json": {
+          "sha256": "07f40fbcb194165560066c5bf100714d61968e65b9686c592ce41ada633433fa",
+          "source_sha256": "07f40fbcb194165560066c5bf100714d61968e65b9686c592ce41ada633433fa"
+        },
+        "a-little-room-to-grow/evidence-data.js": {
+          "sha256": "dee59d815932503a472ab652b27a74e5afe3b4056bf6046f7714e022300f9130",
+          "source_sha256": "dee59d815932503a472ab652b27a74e5afe3b4056bf6046f7714e022300f9130"
+        },
+        "a-little-room-to-grow/evidence.js": {
+          "sha256": "3c2a24ecc0b8241b358e92600641ca800b272cc189b10d90a939e9e8a3cdba27",
+          "source_sha256": "3c2a24ecc0b8241b358e92600641ca800b272cc189b10d90a939e9e8a3cdba27"
+        },
+        "a-little-room-to-grow/game.js": {
+          "sha256": "57360a4f6db4b5c47f0ac37ba9a089e5984e9a4dc384bba077b47037f63a8631",
+          "source_sha256": "57360a4f6db4b5c47f0ac37ba9a089e5984e9a4dc384bba077b47037f63a8631"
+        },
+        "a-little-room-to-grow/index.html": {
+          "sha256": "b33319afb8b8be9808517d00988936cf3c45dceba22be953dd4995f07ede56d4",
+          "source_sha256": "b33319afb8b8be9808517d00988936cf3c45dceba22be953dd4995f07ede56d4"
+        },
+        "a-little-room-to-grow/pledge-logo.jpg": {
+          "sha256": "024e80ffacefb869d684bb2ab524370b8b8fb57e4204b0379ad9d67218266da9",
+          "source_sha256": "024e80ffacefb869d684bb2ab524370b8b8fb57e4204b0379ad9d67218266da9"
+        },
+        "a-little-room-to-grow/research-evidence.json": {
+          "sha256": "07f40fbcb194165560066c5bf100714d61968e65b9686c592ce41ada633433fa",
+          "source_sha256": "07f40fbcb194165560066c5bf100714d61968e65b9686c592ce41ada633433fa"
+        }
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "path": "a-little-room-to-grow-3d-cambridge/tests/original-preservation.json",
+      "reason": "Removed original machine-specific private local path; application code unchanged."
+    }
+  ]
+}

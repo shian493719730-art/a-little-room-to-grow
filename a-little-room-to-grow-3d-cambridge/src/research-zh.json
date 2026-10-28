@@ -1,0 +1,65 @@
+{
+  "family": {
+    "title": "工作、照护与必要开支",
+    "name": "A Minimum Income Standard for the United Kingdom in 2025",
+    "by": "Juliet Stone & Matt Padley · Loughborough University CRSP / Joseph Rowntree Foundation",
+    "year": "2025",
+    "url": "https://www.jrf.org.uk/income-savings-and-debt/a-minimum-income-standard-for-the-united-kingdom-in-2025",
+    "fact": "报告指出，部分工作家庭的收入仍不足以达到最低可接受生活水平；幼儿照护是有孩子家庭预算中的实际项目。",
+    "supports": "支持工作收入与家庭负担并存的情境。固定家务 2 点、£700 与四周周期并非报告中的估算。"
+  },
+  "hours": {
+    "title": "工作机会不等于稳定生活",
+    "name": "Precarious pay and uncertain hours: insecure work in the UK Labour Market",
+    "by": "Joe Richardson · Living Wage Foundation",
+    "year": "2023",
+    "url": "https://www.livingwage.org.uk/precarious-pay-and-uncertain-hours-insecure-work-uk-labour-market",
+    "fact": "报告发现，低薪与工时不稳定有联系，住宿餐饮业的不稳定就业较为普遍；短期排班和取消班次也可能增加交通、照护成本。",
+    "supports": "支持餐饮工作与家庭安排相互挤压的背景。本游戏用固定收入和次数上限简化，不模拟雇主随机取消排班。“连续缺席两周辞退”与确定性求职都是虚构原型规则，不能当作劳动法规。"
+  },
+  "gig": {
+    "title": "配送的灵活性有边界",
+    "name": "Gig-dependent or just gigging? Examining the gig economy’s structural characteristics on food delivery couriers",
+    "by": "N. K. Kougiannou & P. Mendonca · Employee Relations / Nottingham Trent University repository",
+    "year": "2025",
+    "url": "https://irep.ntu.ac.uk/id/eprint/54466/",
+    "fact": "基于 37 次半结构访谈的研究发现，依赖配送收入的劳动者面对财务与工作不稳定；已有其他收入的人对风险的承受情况不同。",
+    "supports": "支持配送作为有限补充收入的情境，不支持 £35、每周三次等数值。研究来自单一城市情境，不能概括所有配送劳动者或证明剑桥的发生率。"
+  },
+  "choice": {
+    "title": "资源不足会压缩日常选择",
+    "name": "United Kingdom Food Security Digest 2025",
+    "by": "Department for Environment, Food & Rural Affairs (Defra)",
+    "year": "2025",
+    "url": "https://www.gov.uk/government/statistics/united-kingdom-food-security-digest-2025/united-kingdom-food-security-digest-2025",
+    "fact": "官方综述指出，低收入家庭往往将更高比例开支用于食物、住房和能源，留给其他事项的比例更低。",
+    "supports": "支持“必要生活挤压个人生活空间”的设计推论。花是叙事象征；体力与花的衰减不是医学、生理或园艺事实。透支也不是实际健康建议。"
+  },
+  "support": {
+    "title": "支持能缓解什么负担",
+    "name": "Evaluation of the Household Support Fund 4",
+    "by": "Ipsos UK · 为 Department for Work and Pensions 开展的研究，报告 1084",
+    "year": "2025",
+    "url": "https://www.gov.uk/government/publications/evaluation-of-the-household-support-fund-4/evaluation-of-the-household-support-fund-4",
+    "fact": "对英格兰家庭支持基金的混合方法评估中，受访者报告援助有助于购买食物、支付能源账单及避免借贷。效果与持续时间因家庭处境和援助形式而异。",
+    "supports": "支持食物与经济援助可能缓解必要开支压力的设计。调查为个案地区的受访者自报，不能视为随机试验或所有家庭的保证效果。+£120、+2 体力和志愿照花均为机制示意，研究不验证这些定量效果。"
+  },
+  "hardship": {
+    "title": "收入不足的日常负担",
+    "name": "Cost of Hunger and Hardship – final report",
+    "by": "Thomas Weekes, Ellie Ball, Sophie Padgett & Sumi Rabindrakumar · Trussell",
+    "year": "2025",
+    "url": "https://www.trussell.org.uk/news-and-research/publications/report/cost-of-hunger-and-hardship-final-report",
+    "fact": "报告记录收入不足对日常生活及身心健康的长期负担，并分析减少饥饿与困境的政策。",
+    "supports": "支持游戏把压力放在生活处境而非个人品德上的叙事。不能据此推算本游戏的体力，也不能证明志愿照花的效果。"
+  },
+  "pledge": {
+    "title": "城市、社群与长期承诺",
+    "name": "The Cambridge Pledge · official website & pledge entry",
+    "by": "The Cambridge Pledge",
+    "year": "网页核对于 2026-10-22",
+    "url": "https://www.cambridge-pledge.org/pledge",
+    "fact": "官方入口邀请与剑桥有联系的人参与承诺。创作 brief 将贫困家庭列为关注群体，要求突出社群与长期贡献。",
+    "supports": "仅支持机构目的与官方入口。游戏中的食物、经济和志愿支持不代表该机构目前直接提供这些服务，真实援助不按本游戏的随机方式分配。"
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "refs": {
+    "G1": {
+      "authors": "McFadyen, C., Gillan, B., Hartley, R., Robertson, L., Wilks, L., & Hirvonen, A.",
+      "year": "2025",
+      "title": "Serving the Future Policy Briefing: Tackling In-work Poverty in the Hospitality Sector.",
+      "venue": "Fraser of Allander Institute.",
+      "url": "https://strathprints.strath.ac.uk/94229/",
+      "cite": "McFadyen et al., 2025",
+      "kind": [
+        "大学研究项目政策简报，不是期刊论文。",
+        "University research project policy briefing, not a journal article."
+      ],
+      "finding": [
+        "苏格兰餐旅业研究记录了低薪、不稳定工时，以及额外工作、疲劳、生活费用和托育压力。",
+        "Scottish hospitality research records low pay, insecure hours, extra work, fatigue, living costs and childcare pressures."
+      ],
+      "limits": [
+        "研究与苏格兰餐旅业的工作者、雇主及行业相关者合作；不能代表所有英国工作者。",
+        "The project worked with workers, employers and industry stakeholders in Scottish hospitality; it does not represent all UK workers."
+      ],
+      "design": [
+        "支持选择餐厅服务作为虚构工作情境，不证明单次工资或缺班惩罚。",
+        "Informs the fictional restaurant setting, not the pay per shift or missed-shift penalties."
+      ]
+    },
+    "G2": {
+      "authors": "Wood, A. J., Martindale, N., & Burchell, B. J.",
+      "year": "2025",
+      "title": "Beyond the ‘Gig Economy’: Towards Variable Experiences of Job Quality in Platform Work.",
+      "venue": "Work, Employment and Society, 39(5), 1154–1178.",
+      "url": "https://doi.org/10.1177/09500170251336947",
+      "cite": "Wood et al., 2025",
+      "kind": [
+        "期刊研究。",
+        "Journal research."
+      ],
+      "finding": [
+        "英国平台劳动研究涵盖配送、载客等本地工作，记录了等待和寻找任务所占用的时间。",
+        "UK platform-work research includes local delivery and ride-hailing, recording time spent waiting and looking for tasks."
+      ],
+      "limits": [
+        "英国非概率样本 N=510，调查于 2022 年进行，不宜推算全国发生率。本项目未进一步核实等待时间的测量周期，因此不展示时长数值。",
+        "A UK non-probability sample of 510, surveyed in 2022; unsuitable for national prevalence estimates. This project has not verified the waiting-time measurement period, so no duration is shown."
+      ],
+      "design": [
+        "可支持“工作投入不一定全部转化为收入”的设计解释，不标定配送工资或体力。",
+        "Informs the interpretation that work effort does not always become income; it does not calibrate delivery pay or energy."
+      ]
+    },
+    "G3": {
+      "authors": "Wang, S., Li, L. Z., & Coutts, A.",
+      "year": "2022",
+      "title": "National survey of mental health and life satisfaction of gig workers: The role of loneliness and financial precarity.",
+      "venue": "BMJ Open, 12(12), e066389.",
+      "url": "https://doi.org/10.1136/bmjopen-2022-066389",
+      "cite": "Wang et al., 2022",
+      "kind": [
+        "期刊研究。",
+        "Journal research."
+      ],
+      "finding": [
+        "该研究的英国零工劳动者子样本中，33.99% 同时有常规工作。",
+        "In the study’s UK gig-worker subsample, 33.99% also held a regular job."
+      ],
+      "limits": [
+        "英国疫情期间样本。不能解释为所有贫困家庭的兼职比例，也不能证明兼业全部出于被迫。",
+        "A UK pandemic-era sample. This is not the share of all families in poverty with second jobs, nor proof that all dual employment is forced."
+      ],
+      "design": [
+        "启发餐厅与配送并存的虚构情境，不证明游戏角色具有相同经历。",
+        "Informs the fictional combination of restaurant and delivery work, not a claim about this character’s real experience."
+      ]
+    },
+    "G4": {
+      "authors": "Giurge, L. M., Whillans, A. V., & West, C.",
+      "year": "2020",
+      "title": "Why time poverty matters for individuals, organisations and nations.",
+      "venue": "Nature Human Behaviour, 4, 993–1003.",
+      "url": "https://doi.org/10.1038/s41562-020-0920-z",
+      "cite": "Giurge et al., 2020",
+      "kind": [
+        "Perspective，综合已有研究。",
+        "Perspective synthesising existing research."
+      ],
+      "finding": [
+        "文章讨论时间贫困与幸福感、健康和生活安排的关系。",
+        "The article discusses how time poverty relates to wellbeing, health and everyday arrangements."
+      ],
+      "limits": [
+        "不是针对游戏角色的实验，不提供体力恢复公式，也没有直接验证“志愿者浇花”的干预效果。",
+        "Not an experiment on this game’s character; it gives no energy-recovery formula and does not directly test volunteer flower watering."
+      ],
+      "design": [
+        "休息、疲劳代价与任务分担是研究启发的设计表达。体力增减不是研究测得的剂量关系。",
+        "Rest, fatigue costs and shared tasks are research-inspired design expressions. Energy changes are not measured dose relationships."
+      ]
+    },
+    "G5": {
+      "authors": "Ferragina, E., Tomlinson, M., & Walker, R.",
+      "year": "2013",
+      "title": "Poverty, participation and choice.",
+      "venue": "Joseph Rowntree Foundation.",
+      "url": "https://www.jrf.org.uk/power-and-participation/poverty-participation-and-choice",
+      "cite": "Ferragina et al., 2013",
+      "kind": [
+        "研究报告。",
+        "Research report."
+      ],
+      "finding": [
+        "报告研究英国贫困、社会参与与选择之间的关系，讨论资源不足对生活参与的限制。",
+        "The report examines poverty, social participation and choice in Britain, including constraints associated with limited resources."
+      ],
+      "limits": [
+        "适合支持社会参与议题，不能用作当前发生率。",
+        "Useful for understanding participation; not a current prevalence estimate."
+      ],
+      "design": [
+        "小花象征爱好、关系和照护的空间，是创作隐喻，不是对现实家庭的测量。",
+        "The flower symbolises room for hobbies, relationships and care: a creative metaphor, not a measure of real families."
+      ]
+    },
+    "G6": {
+      "authors": "Cooper, K.",
+      "year": "2021",
+      "title": "Are Poor Parents Poor Parents? The Relationship between Poverty and Parenting among Mothers in the UK.",
+      "venue": "Sociology, 55(2), 349–383.",
+      "url": "https://doi.org/10.1177/0038038520939397",
+      "cite": "Cooper, 2021",
+      "kind": [
+        "期刊研究；2020 年在线发表，2021 年正式刊期。",
+        "Journal research; online in 2020, published in the 2021 issue."
+      ],
+      "finding": [
+        "英国母亲的研究提示，只聚焦低收入父母会夸大养育差异，并不恰当地将他们视为问题。",
+        "Research on UK mothers cautions that focusing only on low-income parents exaggerates parenting differences and wrongly identifies them as problematic."
+      ],
+      "limits": [
+        "使用英国 Millennium Cohort Study 数据；资源不足不等于关爱不足。",
+        "Uses UK Millennium Cohort Study data. Limited resources do not imply limited care or love."
+      ],
+      "design": [
+        "小花不是儿童发展或父母能力的测量工具，不能据此断言低收入父母缺少关爱。",
+        "The flower is not a measure of child development or parenting ability; it makes no claim that low-income parents lack love."
+      ]
+    },
+    "G7": {
+      "authors": "Thomson, R. M., Igelström, E., Purba, A. K., Shimonovich, M., Thomson, H., McCartney, G., Reeves, A., Leyland, A., Pearce, A., & Katikireddi, S. V.",
+      "year": "2022",
+      "title": "How do income changes impact on mental health and wellbeing for working-age adults? A systematic review and meta-analysis.",
+      "venue": "The Lancet Public Health, 7(6), e515–e528.",
+      "url": "https://doi.org/10.1016/S2468-2667(22)00058-5",
+      "cite": "Thomson et al., 2022",
+      "kind": [
+        "系统综述与荟萃分析。",
+        "Systematic review and meta-analysis."
+      ],
+      "finding": [
+        "综述发现，工作年龄成人的收入变化与心理健康和幸福感变化有关。136 项研究进入叙述性综合，86 项进入荟萃分析。",
+        "The review links income changes with mental health and wellbeing in working-age adults: 136 studies in the narrative synthesis and 86 in the meta-analysis."
+      ],
+      "limits": [
+        "136 指研究数量，不是受访者人数。研究差异较大，证据确定性有限。",
+        "136 counts studies, not participants. Studies were heterogeneous and evidence certainty was limited."
+      ],
+      "design": [
+        "启发经济支持的叙事，不标定 £120，也不能承诺捐款必然改善所有人的状态。",
+        "Informs the financial-support narrative, not the £120 amount or a promise that donations improve everyone’s situation."
+      ]
+    },
+    "G8": {
+      "authors": "Bogiatzis-Gibbons, D., & O’Brien, E.",
+      "year": "2024",
+      "title": "Employment shocks and financial difficulty: Understanding how leaving paid employment affects ability to meet credit repayments.",
+      "venue": "Financial Conduct Authority.",
+      "url": "https://www.fca.org.uk/publications/research-notes/employment-shocks-financial-difficulty-paid-employment-credit-repayments",
+      "cite": "Bogiatzis-Gibbons & O’Brien, 2024",
+      "kind": [
+        "监管机构研究简报。",
+        "Regulator research note."
+      ],
+      "finding": [
+        "研究发现失去工作后，信用还款逾期的可能性增加。",
+        "The research finds increased likelihood of falling behind on credit payments after job loss."
+      ],
+      "limits": [
+        "关注离开有薪工作与信用还款，不是租房驱逐研究。",
+        "Studies leaving paid employment and credit repayments, not rental eviction."
+      ],
+      "design": [
+        "两次缺班辞退、立即求职成功均为游戏规则；研究不支持欠款后立即失去住所。",
+        "Dismissal after two missed weeks and immediate job-search success are game rules. The research does not establish immediate loss of housing after arrears."
+      ]
+    },
+    "R1": {
+      "authors": "Cambridge Econometrics.",
+      "year": "2023",
+      "title": "Cambridge City Portrait: State of the City 2023.",
+      "venue": "Cambridge City Council, pp. 58, 67.",
+      "url": "https://www.cambridge.gov.uk/media/12916/state-of-the-city-report-2023.pdf",
+      "cite": "Cambridge Econometrics, 2023",
+      "kind": [
+        "追溯背景材料 · 收入不平等。",
+        "Traced background material · income inequality."
+      ],
+      "finding": [
+        "报告支持剑桥具有较高收入不平等，并回顾过往基尼系数排名。",
+        "The report supports high income inequality in Cambridge and reviews an earlier Gini-coefficient ranking."
+      ],
+      "limits": [
+        "历史排名基于实验性数据，受学生人口影响；基尼系数最后按城市计算于 2016 年。不是 2026 年最新排名，也未确认就是 brief 的原始脚注。",
+        "The historical ranking uses experimental data sensitive to the student population; the city Gini measure was last calculated for 2016. Not a current 2026 ranking or a confirmed original brief footnote."
+      ]
+    },
+    "R2": {
+      "authors": "Cambridgeshire & Peterborough Insight.",
+      "year": "2023",
+      "title": "JSNA 2023: Life expectancy and healthy life expectancy.",
+      "venue": "Cambridgeshire & Peterborough Insight.",
+      "url": "https://cambridgeshireinsight.org.uk/jsna-2023/overarching-health-indicators/life-expectancy-and-healthy-life-expectancy/",
+      "cite": "Cambridgeshire & Peterborough Insight, 2023",
+      "kind": [
+        "追溯背景材料 · 预期寿命不平等。",
+        "Traced background material · life-expectancy inequality."
+      ],
+      "finding": [
+        "页面直接支持剑桥最贫困与最不贫困地区男性约 12 年、女性 11.8 年的预期寿命差距。",
+        "The page directly reports a Cambridge life-expectancy gap of around 12 years for men and 11.8 years for women between the most and least deprived areas."
+      ],
+      "limits": [
+        "地区人口层面的指标，不能预测某个个人的寿命；不是统一的 2026 年统计快照。未确认就是 brief 原始脚注。",
+        "An area-level population indicator, not an individual lifespan prediction or a uniform 2026 snapshot. Not confirmed as the brief’s original footnote."
+      ]
+    },
+    "R3": {
+      "authors": "Social Mobility and Child Poverty Commission.",
+      "year": "2016",
+      "title": "The Social Mobility Index.",
+      "venue": "Social Mobility and Child Poverty Commission; Cambridge City Council confirmation, 2018, p. 11.",
+      "url": "https://www.gov.uk/government/publications/social-mobility-index",
+      "cite": "Social Mobility and Child Poverty Commission, 2016",
+      "kind": [
+        "追溯背景材料 · 青年社会流动性。",
+        "Traced background material · youth social mobility."
+      ],
+      "finding": [
+        "市议会 2018 年平等计划第 11 页确认剑桥青年分项倒数第五，并指向 2016 年指数。",
+        "Page 11 of the Council’s 2018 equality scheme confirms Cambridge’s fifth-lowest youth score and points to the 2016 index."
+      ],
+      "limits": [
+        "这是青年分项的历史排名，不是总体社会流动性排名或 2026 年排名。未确认就是 brief 原始脚注。",
+        "A historical youth-component ranking, not the overall social-mobility ranking or a 2026 ranking. Not confirmed as the brief’s original footnote."
+      ],
+      "extra": {
+        "url": "https://democracy.cambridge.gov.uk/documents/s42804/Appendix%20B%20Single%20Equality%20Scheme%202018%20to%202021.pdf",
+        "label": [
+          "市议会确认材料 · 第 11 页 ↗",
+          "Council confirmation · p. 11 ↗"
+        ]
+      }
+    },
+    "R4": {
+      "authors": "Hutchinson, J., Robinson, D., Carr, D., Hunt, E., Crenna-Jennings, W., & Akhal, A.",
+      "year": "2018",
+      "title": "Education in England: Annual Report 2018.",
+      "venue": "Education Policy Institute.",
+      "url": "https://epi.org.uk/publications-and-research/annual-report-2018/",
+      "cite": "Hutchinson et al., 2018",
+      "kind": [
+        "待进一步核实 · 原始数值待补核。",
+        "Further verification needed · original figure unlocated."
+      ],
+      "finding": [
+        "报告真实，可用于追溯教育差距的背景。",
+        "The report exists and is relevant to tracing the education-gap background."
+      ],
+      "limits": [
+        "13.1 个月有同期报道支持，但本项目尚未定位原始详细数据表；不制作已验证数据卡，不宣称已核实 brief 原始脚注。",
+        "The 13.1-month figure has contemporaneous reporting, but this project has not located the original detailed table. It is not presented as a verified data card or confirmed original brief footnote."
+      ],
+      "pending": true
+    },
+    "R5": {
+      "authors": "Cambridgeshire County Council.",
+      "year": "2021",
+      "title": "Sufficiency Strategy 2021–2024.",
+      "venue": "Cambridgeshire County Council, pp. 18, 20.",
+      "url": "https://cambridgeshireinsight.org.uk/wp-content/uploads/2021/07/Cambridgeshire-County-Council-Sufficiency-Strategy-2021-21.pdf",
+      "cite": "Cambridgeshire County Council, 2021",
+      "kind": [
+        "待进一步核实 · 统计口径有区别。",
+        "Further verification needed · different statistical unit."
+      ],
+      "finding": [
+        "报告记录 2019–2020 年约 45% 的安置安排位于郡外。",
+        "The report records around 45% of placements outside the county in 2019–2020."
+      ],
+      "limits": [
+        "单位是 placements（安置安排），不能替换为独立儿童人数。尚未完全验证 brief 的“约一半儿童”，也未确认原始脚注。",
+        "The unit is placements, not individual children. This does not fully verify the brief’s “around half of children”, nor confirm its original footnote."
+      ],
+      "pending": true
+    },
+    "R6": {
+      "authors": "Cambridge City Council.",
+      "year": "2023, March",
+      "title": "Housing Key Facts: Homelessness & Rough Sleeping—Summary, Commentary & Data Tables.",
+      "venue": "Cambridge City Council, pp. 3, 15 (Table 14), 18.",
+      "url": "https://cambridge.gov.uk/media/11593/homelessness-rough-sleeping-key-facts-report.pdf",
+      "cite": "Cambridge City Council, 2023",
+      "kind": [
+        "追溯背景材料 · 家庭住房危机与露宿街头。",
+        "Traced background material · family housing crisis and rough sleeping."
+      ],
+      "finding": [
+        "2022 年 4 月至 2023 年 3 月，131 户有孩子或孕妇的申请家庭被安置在 B&B 紧急住宿中；上一年度 75 户，增长约 75%。",
+        "From April 2022 to March 2023, 131 applicant households with children or a pregnant member were placed in emergency B&B accommodation, up from 75 the previous year: around 75%."
+      ],
+      "limits": [
+        "第 18 页街头清点：2022 年 23 人，上一年 14 人。这是一次清点快照，不是全年全部无家可归人数；不表示游戏中欠款会自动造成无家可归。未确认原始脚注。",
+        "Page 18 records 23 rough sleepers in the 2022 count versus 14 a year earlier: a snapshot, not all people homeless during the year. This does not imply automatic homelessness after game arrears. Original footnote unconfirmed."
+      ]
+    },
+    "R7": {
+      "authors": "Joseph Rowntree Foundation.",
+      "year": "2025, December 17",
+      "title": "No let-up for millions of families in hardship: JRF’s cost of living tracker, winter 2025.",
+      "venue": "Joseph Rowntree Foundation.",
+      "url": "https://www.jrf.org.uk/cost-of-living/jrfs-cost-of-living-tracker-winter-2025",
+      "cite": "Joseph Rowntree Foundation, 2025",
+      "kind": [
+        "补充研究报告 · 英国必需品不足。",
+        "Supplementary research report · UK essentials hardship."
+      ],
+      "finding": [
+        "报告称，低收入家庭中 60% 在过去六个月缺少生活必需品，包括食物等。",
+        "The report finds that 60% of low-income households had gone without essentials in the preceding six months, including food."
+      ],
+      "limits": [
+        "调查覆盖英国收入最低 40% 的 4,037 个家庭，调查于 2025 年 10–11 月进行。这是英国背景，不是剑桥当地比例。",
+        "The survey covered 4,037 UK households in the bottom 40% of incomes in October–November 2025. UK context, not a Cambridge rate."
+      ],
+      "design": [
+        "为食物支持提供背景；每周固定 +2 体力是游戏抽象，不是研究测量或实际服务承诺。",
+        "Provides context for food support; +2 energy per week is a game abstraction, not a measured effect or service promise."
+      ]
+    }
+  },
+  "notes": {
+    "restaurant": {
+      "refs": [
+        "G1"
+      ],
+      "text": [
+        "餐旅业研究记录了低薪、不稳定工时，以及工作与照护安排之间的冲突。",
+        "Hospitality research records low pay, insecure hours and conflicts between work and care."
+      ]
+    },
+    "delivery": {
+      "refs": [
+        "G3",
+        "G2"
+      ],
+      "text": [
+        "一项英国研究中，约 34% 的零工劳动者同时有常规工作。",
+        "In one UK study, around 34% of gig workers also had a regular job."
+      ]
+    },
+    "rest": {
+      "refs": [
+        "G4"
+      ],
+      "text": [
+        "时间不足也会影响幸福感、健康和生活安排。",
+        "A shortage of time can also affect wellbeing, health and everyday arrangements."
+      ]
+    },
+    "borrow": {
+      "refs": [
+        "G1",
+        "G4"
+      ],
+      "text": [
+        "额外工作和人手不足，可能伴随疲劳、压力及工作与生活平衡的恶化。",
+        "Extra work and understaffing can bring fatigue, stress and a worsening work–life balance."
+      ],
+      "design": [
+        "本周增加体力、下周扣除体力是表达疲劳代价的游戏设计，不是研究测得的剂量关系。",
+        "Adding energy now and deducting it next week expresses fatigue through game design, not a measured dose relationship."
+      ]
+    },
+    "care": {
+      "refs": [
+        "G5",
+        "G6"
+      ],
+      "text": [
+        "小花代表你想照顾的生活：爱好、关系，以及家庭照护。",
+        "The flower represents the life you want to care for: hobbies, relationships and family care."
+      ],
+      "design": [
+        "这是研究启发的创作隐喻。低收入可能限制生活参与和照护资源，但资源不足不等于关爱不足。",
+        "A research-inspired creative metaphor. Low income can constrain participation and care resources; limited resources do not mean limited love."
+      ]
+    },
+    "job": {
+      "refs": [
+        "G8"
+      ],
+      "text": [
+        "失去收入来源，会让支付压力进一步增加。",
+        "Losing a source of income can add to payment pressures."
+      ]
+    },
+    "food": {
+      "refs": [
+        "R7"
+      ],
+      "text": [
+        "低收入家庭可能面临食物和生活必需品不足。",
+        "Low-income households may face shortages of food and everyday essentials."
+      ]
+    },
+    "cash": {
+      "refs": [
+        "G7"
+      ],
+      "text": [
+        "收入变化与心理健康、幸福感变化有关。",
+        "Income changes are associated with changes in mental health and wellbeing."
+      ]
+    },
+    "volunteer": {
+      "refs": [
+        "G4"
+      ],
+      "text": [
+        "分担任务，可以作为释放时间的设计表达。",
+        "Sharing tasks is a design expression of making more time available."
+      ],
+      "design": [
+        "该文章没有直接验证“志愿者浇花”的干预效果。",
+        "The article does not directly test volunteer flower watering."
+      ]
+    }
+  }
+}

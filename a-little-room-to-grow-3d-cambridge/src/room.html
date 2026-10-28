@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Cambridge afternoon</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#d7c9b1;font-family:Georgia,serif}canvas{display:block;touch-action:none}#caption{position:fixed;left:28px;top:24px;color:#fff5df;text-shadow:0 2px 12px #39342c;pointer-events:none}#caption span{font:11px system-ui;letter-spacing:3px;text-transform:uppercase}#caption h1{font-size:25px;font-weight:normal;margin:7px 0}#help{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#f8f2e7e8;color:#3f514f;padding:12px 20px;border-radius:30px;font:12px system-ui;text-align:center;max-width:85%;width:max-content;box-shadow:0 3px 20px #392f2920}#notice{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:#faf5eb;color:#354b50;padding:26px;border-radius:10px;box-shadow:0 12px 60px #0004;max-width:310px;display:none;line-height:1.6}#notice button{border:0;background:#436b7c;color:white;padding:10px 22px;border-radius:5px;cursor:pointer}button:focus-visible{outline:3px solid #cfa45c}
+#caption{inset:0;left:0;top:0;display:grid;place-items:center;z-index:10;text-align:center}#caption h1{margin:0;white-space:nowrap;font-family:Georgia,'Times New Roman',serif;font-size:clamp(12px,3.1vw,42px);font-weight:normal;line-height:1.2;color:#fff3d8;text-shadow:0 0 12px #fff0cb75,0 2px 20px #6b53375e;animation:title-arrive 2.4s ease both}@keyframes title-arrive{from{opacity:0}to{opacity:1}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="caption"><h1>Let’s grow Flower for Future, together.</h1></div>
+<div id="help">Drag to look around · Click the monitor to play</div>
+<div id="notice" role="dialog" aria-label="Play destination"><strong>Your next chapter awaits.</strong><p>The Play destination has not been supplied yet. Add it to PLAY_URL in the document to enable the external game.</p><button id="close">Back to the desk</button></div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const PLAY_URL = './index.html#game';
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,500);
+const renderer = new THREE.WebGLRenderer({antialias:true});
+const controls = {update(){camera.rotation.set(pitch,yaw,0,'YXZ');}};
+const clock = new THREE.Clock();
+const raycaster = new THREE.Raycaster();
+const pointer = new THREE.Vector2();
+const notice = document.getElementById('notice');
+let yaw=0,pitch=-0.16,dragging=false,startX=0,startY=0,lastX=0,lastY=0,moved=0,time=0;
+
+function canvasTexture(kind){
+ const c=document.createElement('canvas');c.width=1024;c.height=640;const g=c.getContext('2d');
+ g.fillStyle='#f1e8d7';g.fillRect(0,0,1024,640);
+ if(kind==='screen'){
+  g.fillStyle='#f9f5ed';g.fillRect(0,0,1024,640);
+  const logo=new Image();
+  logo.onload=()=>{
+   const scale=Math.min(900/logo.naturalWidth,450/logo.naturalHeight);
+   const w=logo.naturalWidth*scale,h=logo.naturalHeight*scale;
+   g.drawImage(logo,(1024-w)/2,(640-h)/2,w,h);t.needsUpdate=true;
+  };
+  logo.src='./assets/pledge-logo-supplied.png';
+ }else if(kind==='station'){
+  const sky=g.createLinearGradient(0,0,0,640);sky.addColorStop(0,'#a8c1d0');sky.addColorStop(1,'#f1d4a0');g.fillStyle=sky;g.fillRect(0,0,1024,640);
+  g.fillStyle='#ffe7ad';g.beginPath();g.arc(172,145,57,0,7);g.fill();
+  g.fillStyle='#b7ad9b';g.fillRect(0,420,1024,220);
+  g.fillStyle='#b99173';g.fillRect(70,270,884,213);
+  g.fillStyle='#d6bb94';g.fillRect(60,249,904,25);g.fillRect(70,330,884,15);g.fillRect(70,464,884,19);
+  g.fillStyle='#aa8367';g.fillRect(330,222,364,31);
+  g.fillStyle='#e1cba6';g.fillRect(322,211,380,13);
+  for(let i=0;i<13;i++){
+   const x=98+i*64;
+   g.fillStyle='#e6d0ad';g.beginPath();g.roundRect(x-7,354,48,106,[23,23,0,0]);g.fill();
+   g.fillStyle='#708d96';g.beginPath();g.roundRect(x,361,34,99,[17,17,0,0]);g.fill();
+   g.fillStyle='#c4c2ab';g.fillRect(x+15,362,4,97);g.fillRect(x,394,34,4);
+  }
+  g.fillStyle='#536e74';g.beginPath();g.moveTo(42,366);g.lineTo(911,366);g.lineTo(986,396);g.lineTo(106,396);g.closePath();g.fill();
+  g.fillStyle='#c8d1c5';g.beginPath();g.moveTo(65,369);g.lineTo(909,369);g.lineTo(956,387);g.lineTo(108,387);g.closePath();g.fill();
+  g.strokeStyle='#788e8e';g.lineWidth=3;for(let i=0;i<12;i++){g.beginPath();g.moveTo(93+i*70,370);g.lineTo(132+i*70,387);g.stroke();}
+  g.fillStyle='#5c767b';g.fillRect(115,395,7,100);g.fillRect(355,395,7,100);g.fillRect(665,395,7,100);g.fillRect(930,395,7,100);
+  g.fillStyle='#d5bc97';g.beginPath();g.moveTo(0,522);g.lineTo(1024,497);g.lineTo(1024,640);g.lineTo(0,640);g.fill();
+  g.strokeStyle='#e6d3b4';g.lineWidth=4;g.beginPath();g.moveTo(0,561);g.lineTo(1024,536);g.stroke();
+ }else if(kind==='window'||kind==='skyline'||kind==='postcard'){
+  const sky=g.createLinearGradient(0,0,0,640);sky.addColorStop(0,'#a8c1d0');sky.addColorStop(.7,'#f1d4a0');sky.addColorStop(1,'#dfb184');g.fillStyle=sky;g.fillRect(0,0,1024,640);
+  g.fillStyle='#ffe7ad';g.beginPath();g.arc(225,205,61,0,7);g.fill();
+  g.fillStyle='#b5a999';g.beginPath();g.moveTo(0,425);g.lineTo(0,350);g.lineTo(100,350);g.lineTo(100,305);g.lineTo(140,305);g.lineTo(140,267);g.lineTo(147,226);g.lineTo(154,267);g.lineTo(154,305);g.lineTo(195,305);g.lineTo(195,362);g.lineTo(315,362);g.lineTo(315,270);g.lineTo(332,270);g.lineTo(332,217);g.lineTo(345,177);g.lineTo(358,217);g.lineTo(358,270);g.lineTo(375,270);g.lineTo(375,360);g.lineTo(470,360);g.lineTo(470,425);g.closePath();g.fill();
+  g.fillStyle='#897f78';g.fillRect(535,328,240,150);g.fillRect(520,306,270,30);
+  g.fillRect(540,270,20,60);g.fillRect(750,270,20,60);g.fillRect(600,255,20,80);g.fillRect(690,255,20,80);
+  g.fillStyle='#6c7777';for(let i=0;i<7;i++){g.beginPath();g.roundRect(550+i*32,351,15,76,7);g.fill();}
+  g.fillStyle='#9b7968';g.beginPath();g.moveTo(0,470);g.lineTo(0,420);g.lineTo(110,354);g.lineTo(220,420);g.lineTo(315,369);g.lineTo(430,430);g.lineTo(430,540);g.lineTo(0,540);g.fill();
+  g.fillStyle='#c7ab8d';g.fillRect(0,433,430,207);g.fillStyle='#657578';g.fillRect(52,462,48,60);g.fillRect(152,462,48,60);g.fillRect(270,474,48,60);
+  g.fillStyle='#88947d';g.beginPath();g.ellipse(907,402,143,118,0,0,7);g.fill();
+  if(kind==='postcard'){g.fillStyle='#8aafb5';g.fillRect(0,475,1024,165);g.strokeStyle='#e0d8b9';g.lineWidth=12;g.beginPath();g.moveTo(540,500);g.quadraticCurveTo(660,355,820,500);g.stroke();g.fillStyle='#fff6dc';g.font='italic 42px Georgia';g.fillText('Along the River Cam',40,595);}
+  if(kind==='skyline'){g.fillStyle='#f1e8d7';g.fillRect(0,560,1024,80);g.fillStyle='#4d6571';g.font='29px Georgia';g.textAlign='center';g.fillText('C A M B R I D G E',512,612);}
+ }else if(kind==='map'){
+  g.fillStyle='#e4e2cd';g.fillRect(0,0,1024,640);g.strokeStyle='#b6c6a4';g.lineWidth=82;g.beginPath();g.moveTo(0,70);g.lineTo(1024,500);g.stroke();
+  g.strokeStyle='#fffaf0';g.lineWidth=24;for(let i=0;i<8;i++){g.beginPath();g.moveTo(i*160-170,0);g.lineTo(i*160+140,640);g.stroke();}for(let i=0;i<6;i++){g.beginPath();g.moveTo(0,i*125);g.lineTo(1024,i*125-130);g.stroke();}
+  g.strokeStyle='#85b1c3';g.lineWidth=35;g.beginPath();g.moveTo(600,0);g.bezierCurveTo(190,190,850,390,390,640);g.stroke();g.fillStyle='#405f6b';g.font='bold 42px Georgia';g.fillText('CAMBRIDGE',40,70);g.font='25px Georgia';g.fillText('The Backs',200,330);g.fillText('Market Square',610,290);g.fillText('River Cam',470,550);
+  g.strokeStyle='#c0bba8';g.lineWidth=3;g.beginPath();g.moveTo(512,0);g.lineTo(512,640);g.moveTo(0,320);g.lineTo(1024,320);g.stroke();
+ }else{
+  g.fillStyle='#526b7a';g.font='italic 35px Georgia';g.fillText('Things worth making time for',75,90);g.strokeStyle='#c5c9c7';g.lineWidth=2;for(let i=0;i<11;i++){g.beginPath();g.moveTo(70,155+i*40);g.lineTo(950,155+i*40);g.stroke();}g.font='italic 27px Georgia';g.fillText('A walk by the river',90,193);g.fillText('Something good, together.',90,274);
+ }
+ const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t;
+}
+function openInvitation(){if(window.parent!==window){window.parent.postMessage({type:'cambridge-room-play'},location.origin);}else{window.location.assign(PLAY_URL);}}
+function resize(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);}
+function roundedChairGeometry(width,height,depth,radius){
+ const s=new THREE.Shape();const x=-width/2,y=-height/2;
+ s.moveTo(x+radius,y);s.lineTo(x+width-radius,y);s.quadraticCurveTo(x+width,y,x+width,y+radius);s.lineTo(x+width,y+height-radius);s.quadraticCurveTo(x+width,y+height,x+width-radius,y+height);s.lineTo(x+radius,y+height);s.quadraticCurveTo(x,y+height,x,y+height-radius);s.lineTo(x,y+radius);s.quadraticCurveTo(x,y,x+radius,y);
+ const geometry=new THREE.ExtrudeGeometry(s,{depth:depth-.02,bevelEnabled:true,bevelThickness:.01,bevelSize:.01,bevelSegments:3,steps:1,curveSegments:12});geometry.translate(0,0,-(depth-.02)/2);return geometry;
+}
+function m3dSkyDomeTexture() {
+ const c=document.createElement('canvas');c.width=2;c.height=512;const g=c.getContext('2d');const gr=g.createLinearGradient(0,0,0,512);gr.addColorStop(0,'#b8d4ff');gr.addColorStop(.5,'#d3e2f7');gr.addColorStop(1,'#e8eef5');g.fillStyle=gr;g.fillRect(0,0,2,512);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;
+}
+function m3dCheckerTexture() {
+ const c=document.createElement('canvas');c.width=4;c.height=4;const g=c.getContext('2d');g.fillStyle='#f2f2f2';g.fillRect(0,0,4,4);g.fillStyle='#d9d9de';g.fillRect(0,0,2,2);g.fillRect(2,2,2,2);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(25,25);t.magFilter=THREE.NearestFilter;t.colorSpace=THREE.SRGBColorSpace;return t;
+}
+
+scene.background=new THREE.Color(0xc5d0d2);
+camera.position.set(0,1.27,2.02);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=0.9;document.body.appendChild(renderer.domElement);
+const fill=new THREE.HemisphereLight(0xe3edf3,0xb49a79,1.7);fill.name='Soft room fill';scene.add(fill);
+const sun=new THREE.DirectionalLight(0xffd19a,3.1);sun.name='Late afternoon sun';sun.position.set(-3,4,-1);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-5;sun.shadow.camera.right=5;sun.shadow.camera.top=5;sun.shadow.camera.bottom=-5;sun.shadow.normalBias=0.03;scene.add(sun);
+const ground=new THREE.Mesh(new THREE.BoxGeometry(7,.12,7),new THREE.MeshStandardMaterial({color:0x9a795c,roughness:.88}));ground.name='Wooden floor';ground.position.set(0,-.06,0);ground.receiveShadow=true;scene.add(ground);
+const backWall=new THREE.Mesh(new THREE.BoxGeometry(7,3.2,.15),new THREE.MeshStandardMaterial({color:0xd8d4c6,roughness:1}));backWall.name='Warm plaster back wall';backWall.position.set(0,1.6,-3);backWall.receiveShadow=true;scene.add(backWall);
+const sideWall=new THREE.Mesh(new THREE.BoxGeometry(.15,3.2,7),new THREE.MeshStandardMaterial({color:0x81979e,roughness:1}));sideWall.name='Blue side wall';sideWall.position.set(-3.5,1.6,0);scene.add(sideWall);
+const rightWall=new THREE.Mesh(new THREE.BoxGeometry(.15,3.2,7),new THREE.MeshStandardMaterial({color:0xd8d4c6,roughness:1}));rightWall.name='Warm plaster right wall';rightWall.position.set(3.5,1.6,0);rightWall.receiveShadow=true;scene.add(rightWall);
+const frontWall=new THREE.Mesh(new THREE.BoxGeometry(7,3.2,.15),new THREE.MeshStandardMaterial({color:0xd8d4c6,roughness:1}));frontWall.name='Warm plaster wall behind the chair';frontWall.position.set(0,1.6,3.425);frontWall.receiveShadow=true;scene.add(frontWall);
+const ceiling=new THREE.Mesh(new THREE.BoxGeometry(7.15,.15,7.15),new THREE.MeshStandardMaterial({color:0xd8d4c6,roughness:1}));ceiling.name='Warm plaster ceiling';ceiling.position.set(0,3.275,0);ceiling.receiveShadow=true;scene.add(ceiling);
+const baseboard=new THREE.Mesh(new THREE.BoxGeometry(7,.13,.06),new THREE.MeshStandardMaterial({color:0xe5ddcd,roughness:.8}));baseboard.name='Back skirting';baseboard.position.set(0,.065,-2.88);scene.add(baseboard);
+const windowFrame=new THREE.Mesh(new THREE.BoxGeometry(2.55,1.85,.14),new THREE.MeshStandardMaterial({color:0xf0e4cb,roughness:.8}));windowFrame.name='Painted window frame';windowFrame.position.set(-1.25,1.99,-2.83);scene.add(windowFrame);
+const windowView=new THREE.Mesh(new THREE.PlaneGeometry(2.35,1.65),new THREE.MeshBasicMaterial({map:canvasTexture('window'),color:0xffffff}));windowView.name='Quiet Cambridge rooftops and chapel spires';windowView.position.set(-1.25,1.99,-2.745);scene.add(windowView);
+const windowVertical=new THREE.Mesh(new THREE.BoxGeometry(.045,1.68,.06),new THREE.MeshStandardMaterial({color:0xe9dfcb,roughness:.8}));windowVertical.name='Window centre mullion';windowVertical.position.set(-1.25,1.99,-2.69);scene.add(windowVertical);
+const windowHorizontal=new THREE.Mesh(new THREE.BoxGeometry(2.38,.045,.06),new THREE.MeshStandardMaterial({color:0xe9dfcb,roughness:.8}));windowHorizontal.name='Window cross rail';windowHorizontal.position.set(-1.25,2.14,-2.69);scene.add(windowHorizontal);
+const sill=new THREE.Mesh(new THREE.BoxGeometry(2.72,.09,.34),new THREE.MeshStandardMaterial({color:0xe4d4b7,roughness:.8}));sill.name='Deep window sill';sill.position.set(-1.25,1.03,-2.65);sill.castShadow=true;scene.add(sill);
+const desk=new THREE.Mesh(new THREE.BoxGeometry(2.95,.09,1.38),new THREE.MeshStandardMaterial({color:0xb28a60,roughness:.76}));desk.name='Well-used oak desk';desk.position.set(0,.765,0);desk.receiveShadow=true;desk.castShadow=true;scene.add(desk);
+const leftLeg=new THREE.Mesh(new THREE.BoxGeometry(.1,.72,1.14),new THREE.MeshStandardMaterial({color:0x69838a,roughness:.8}));leftLeg.name='Desk left support';leftLeg.position.set(-1.29,.36,0);scene.add(leftLeg);
+const rightLeg=new THREE.Mesh(new THREE.BoxGeometry(.1,.72,1.14),new THREE.MeshStandardMaterial({color:0x69838a,roughness:.8}));rightLeg.name='Desk right support';rightLeg.position.set(1.29,.36,0);scene.add(rightLeg);
+const monitorFoot=new THREE.Mesh(new THREE.BoxGeometry(.4,.035,.28),new THREE.MeshStandardMaterial({color:0x414e53,roughness:.7}));monitorFoot.name='Monitor foot';monitorFoot.position.set(0,.8275,-.36);scene.add(monitorFoot);
+const monitorStem=new THREE.Mesh(new THREE.BoxGeometry(.075,.24,.06),new THREE.MeshStandardMaterial({color:0x414e53,roughness:.7}));monitorStem.name='Monitor stem';monitorStem.position.set(0,.965,-.45);scene.add(monitorStem);
+const monitor=new THREE.Mesh(new THREE.BoxGeometry(1.13,.73,.065),new THREE.MeshStandardMaterial({color:0x303d45,roughness:.6}));monitor.name='Central monitor';monitor.position.set(0,1.36,-.45);monitor.castShadow=true;scene.add(monitor);
+const screen=new THREE.Mesh(new THREE.PlaneGeometry(1.065,.666),new THREE.MeshBasicMaterial({map:canvasTexture('screen'),color:0xffffff}));screen.name='The Cambridge Pledge invitation — click to play';screen.position.set(0,1.36,-.385);scene.add(screen);
+const keyboard=new THREE.Mesh(new THREE.BoxGeometry(.75,.025,.235),new THREE.MeshStandardMaterial({color:0x63757a,roughness:.85}));keyboard.name='Keyboard';keyboard.position.set(0,.8225,.14);scene.add(keyboard);
+const keycaps=new THREE.InstancedMesh(new THREE.BoxGeometry(.038,.009,.035),new THREE.MeshStandardMaterial({color:0xdadcd4,roughness:.85}),56);keycaps.name='Keyboard keycaps';const keyMatrix=new THREE.Matrix4();for(let i=0;i<56;i++){keyMatrix.makeTranslation(-.325+(i%14)*.05,.84,.06+Math.floor(i/14)*.05);keycaps.setMatrixAt(i,keyMatrix);}keycaps.instanceMatrix.needsUpdate=true;keycaps.computeBoundingSphere();scene.add(keycaps);
+const mouse=new THREE.Mesh(new THREE.SphereGeometry(1,24,12),new THREE.MeshStandardMaterial({color:0x536c75,roughness:.7}));mouse.name='Mouse';mouse.scale.set(.065,.025,.1);mouse.position.set(.55,.839,.14);scene.add(mouse);
+const mug=new THREE.Mesh(new THREE.CylinderGeometry(.105,.088,.19,40,1,true),new THREE.MeshStandardMaterial({color:0x91afb8,roughness:.45,side:THREE.DoubleSide}));mug.name='Blue coffee mug';mug.position.set(-.91,.907,.23);mug.castShadow=true;scene.add(mug);
+const coffee=new THREE.Mesh(new THREE.CylinderGeometry(.096,.096,.012,40),new THREE.MeshStandardMaterial({color:0x37291d,roughness:.28}));coffee.name='Coffee surface';coffee.position.set(-.91,.975,.23);scene.add(coffee);
+const mugHandle=new THREE.Mesh(new THREE.TorusGeometry(.068,.018,12,32),new THREE.MeshStandardMaterial({color:0x91afb8,roughness:.45}));mugHandle.name='Coffee mug handle';mugHandle.position.set(-1.025,.918,.23);scene.add(mugHandle);
+const notebook=new THREE.Mesh(new THREE.BoxGeometry(.4,.025,.49),new THREE.MeshStandardMaterial({color:0x3b687c,roughness:.9}));notebook.name='Blue paper notebook cover';notebook.position.set(.96,.8225,.23);notebook.rotation.y=-.15;scene.add(notebook);
+const notebookPaper=new THREE.Mesh(new THREE.BoxGeometry(.375,.012,.465),new THREE.MeshStandardMaterial({color:0xf4edda,roughness:1}));notebookPaper.name='Notebook paper';notebookPaper.position.set(.96,.842,.23);notebookPaper.rotation.y=-.15;scene.add(notebookPaper);
+const notes=new THREE.Mesh(new THREE.PlaneGeometry(.365,.45),new THREE.MeshStandardMaterial({color:0xffffff,map:canvasTexture('notes'),roughness:1,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1}));notes.name='Handwritten notebook page';notes.rotation.set(-Math.PI/2,0,.15);notes.position.set(.96,.879,.23);scene.add(notes);
+const pen=new THREE.Mesh(new THREE.CylinderGeometry(.006,.009,.29,12),new THREE.MeshStandardMaterial({color:0x344552,roughness:.5}));pen.name='Unbranded blue pen';pen.rotation.set(Math.PI/2,0,.33);pen.position.set(.72,.863,.3);scene.add(pen);
+const paperOne=new THREE.Mesh(new THREE.BoxGeometry(.36,.004,.43),new THREE.MeshStandardMaterial({color:0xeee8da,roughness:1}));paperOne.name='Loose paper beneath map';paperOne.position.set(-.89,.815,-.3);paperOne.rotation.y=.18;scene.add(paperOne);
+const paperTwo=new THREE.Mesh(new THREE.BoxGeometry(.32,.004,.39),new THREE.MeshStandardMaterial({color:0xfaf1dc,roughness:1}));paperTwo.name='Second loose paper';paperTwo.position.set(-.76,.821,-.27);paperTwo.rotation.y=-.19;scene.add(paperTwo);
+const map=new THREE.Mesh(new THREE.PlaneGeometry(.49,.34),new THREE.MeshStandardMaterial({color:0xffffff,map:canvasTexture('map'),roughness:1,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1}));map.name='Folded local map of Cambridge';map.position.set(-.81,.855,-.26);map.rotation.set(-Math.PI/2,0,-.13);scene.add(map);
+const postcard=new THREE.Mesh(new THREE.PlaneGeometry(.28,.18),new THREE.MeshStandardMaterial({color:0xffffff,map:canvasTexture('postcard'),roughness:1,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1}));postcard.name='River Cam postcard';postcard.position.set(-.47,.845,.43);postcard.rotation.set(-Math.PI/2,0,.14);scene.add(postcard);
+const printFrame=new THREE.Mesh(new THREE.BoxGeometry(.39,.29,.035),new THREE.MeshStandardMaterial({color:0x6d5540,roughness:.8}));printFrame.name='Small wooden skyline frame';printFrame.position.set(.79,.958,-.5);printFrame.rotation.y=-.13;scene.add(printFrame);
+const print=new THREE.Mesh(new THREE.PlaneGeometry(.335,.233),new THREE.MeshStandardMaterial({color:0xffffff,map:canvasTexture('station'),roughness:.9}));print.name='Cambridge railway station illustration';print.position.set(.783,.958,-.446);print.rotation.y=-.13;scene.add(print);
+const pot=new THREE.Mesh(new THREE.CylinderGeometry(.105,.074,.15,32),new THREE.MeshStandardMaterial({color:0xb67759,roughness:.9}));pot.name='Small terracotta flower pot';pot.position.set(1.23,.885,-.39);pot.castShadow=true;scene.add(pot);
+const soil=new THREE.Mesh(new THREE.CylinderGeometry(.094,.094,.012,24),new THREE.MeshStandardMaterial({color:0x44382c,roughness:1}));soil.name='Pot soil';soil.position.set(1.23,.963,-.39);scene.add(soil);
+const stem=new THREE.Mesh(new THREE.CylinderGeometry(.008,.01,.28,10),new THREE.MeshStandardMaterial({color:0x56774a,roughness:.8}));stem.name='Flower stem';stem.position.set(1.23,1.105,-.39);scene.add(stem);
+const leafLeft=new THREE.Mesh(new THREE.SphereGeometry(1,16,10),new THREE.MeshStandardMaterial({color:0x6d8c58,roughness:.8}));leafLeft.name='Left flower leaf';leafLeft.position.set(1.183,1.09,-.39);leafLeft.scale.set(.07,.022,.032);leafLeft.rotation.z=.5;scene.add(leafLeft);
+const leafRight=new THREE.Mesh(new THREE.SphereGeometry(1,16,10),new THREE.MeshStandardMaterial({color:0x6d8c58,roughness:.8}));leafRight.name='Right flower leaf';leafRight.position.set(1.278,1.15,-.39);leafRight.scale.set(.065,.022,.03);leafRight.rotation.z=-.5;scene.add(leafRight);
+const bud=new THREE.Mesh(new THREE.SphereGeometry(1,24,16),new THREE.MeshStandardMaterial({color:0xb9959b,roughness:.7}));bud.name='Single closed flower bud';bud.scale.set(.034,.062,.034);bud.position.set(1.23,1.281,-.39);scene.add(bud);
+// One original plant, translated as a whole into the clear space in front of the keyboard.
+for(const part of [pot,soil,stem,leafLeft,leafRight,bud]){part.position.x-=.87;part.position.z+=.87;}
+const bicycle=new THREE.Group();bicycle.name='Bicycle leaning against the back wall';bicycle.position.set(1.83,0,-2.54);bicycle.rotation.set(-.09,0,0);scene.add(bicycle);
+const rearWheel=new THREE.Mesh(new THREE.TorusGeometry(.34,.023,12,64),new THREE.MeshStandardMaterial({color:0x373e3c,roughness:.9}));rearWheel.name='Bicycle rear tyre';rearWheel.position.set(-.52,.365,0);bicycle.add(rearWheel);
+const frontWheel=new THREE.Mesh(new THREE.TorusGeometry(.34,.023,12,64),new THREE.MeshStandardMaterial({color:0x373e3c,roughness:.9}));frontWheel.name='Bicycle front tyre';frontWheel.position.set(.52,.365,0);bicycle.add(frontWheel);
+const rearRim=new THREE.Mesh(new THREE.TorusGeometry(.31,.008,8,64),new THREE.MeshStandardMaterial({color:0xa7aaa1,metalness:.18,roughness:.4}));rearRim.name='Rear wheel rim';rearRim.position.set(-.52,.365,0);bicycle.add(rearRim);
+const frontRim=new THREE.Mesh(new THREE.TorusGeometry(.31,.008,8,64),new THREE.MeshStandardMaterial({color:0xa7aaa1,metalness:.18,roughness:.4}));frontRim.name='Front wheel rim';frontRim.position.set(.52,.365,0);bicycle.add(frontRim);
+const spokes=new THREE.InstancedMesh(new THREE.CylinderGeometry(.003,.003,.62,6),new THREE.MeshStandardMaterial({color:0xa3aaa5,metalness:.15,roughness:.5}),24);spokes.name='Bicycle spokes';const spokeObject=new THREE.Object3D();for(let i=0;i<24;i++){spokeObject.position.set(i<12?-.52:.52,.365,0);spokeObject.rotation.set(0,0,(i%12)*Math.PI/12);spokeObject.updateMatrix();spokes.setMatrixAt(i,spokeObject.matrix);}spokes.instanceMatrix.needsUpdate=true;spokes.computeBoundingSphere();bicycle.add(spokes);
+const bicycleFrame=new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-.52,.365,0),new THREE.Vector3(-.18,.82,0),new THREE.Vector3(-.18,.82,0),new THREE.Vector3(.03,.365,0),new THREE.Vector3(.03,.365,0),new THREE.Vector3(-.52,.365,0),new THREE.Vector3(-.18,.82,0),new THREE.Vector3(.34,.82,0),new THREE.Vector3(.34,.82,0),new THREE.Vector3(.03,.365,0),new THREE.Vector3(.34,.82,0),new THREE.Vector3(.52,.365,0)]),new THREE.LineBasicMaterial({color:0x446c76}));bicycleFrame.name='Bicycle frame guide';bicycleFrame.visible=false;bicycle.add(bicycleFrame);
+const frameTubes=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(-.52,.365,0),new THREE.Vector3(-.18,.82,0),new THREE.Vector3(.03,.365,0),new THREE.Vector3(-.52,.365,0)],false,'catmullrom',0),36,.016,8,false),new THREE.MeshStandardMaterial({color:0x476c75,roughness:.6}));frameTubes.name='Bicycle rear frame triangle';bicycle.add(frameTubes);
+const frontTubes=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(-.18,.82,0),new THREE.Vector3(.34,.82,0),new THREE.Vector3(.03,.365,0)],false,'catmullrom',0),24,.017,8,false),new THREE.MeshStandardMaterial({color:0x476c75,roughness:.6}));frontTubes.name='Bicycle main frame tubes';bicycle.add(frontTubes);
+const fork=new THREE.Mesh(new THREE.CylinderGeometry(.014,.014,.63,10),new THREE.MeshStandardMaterial({color:0x476c75,roughness:.6}));fork.name='Bicycle fork and steering tube';fork.position.set(.415,.65,0);fork.rotation.z=.29;bicycle.add(fork);
+const saddlePost=new THREE.Mesh(new THREE.CylinderGeometry(.011,.011,.18,10),new THREE.MeshStandardMaterial({color:0x9caaa8,metalness:.15,roughness:.5}));saddlePost.name='Bicycle saddle post';saddlePost.position.set(-.2,.88,0);bicycle.add(saddlePost);
+const saddle=new THREE.Mesh(new THREE.BoxGeometry(.22,.045,.12),new THREE.MeshStandardMaterial({color:0x654e3e,roughness:.9}));saddle.name='Worn bicycle saddle';saddle.position.set(-.22,.985,0);bicycle.add(saddle);
+const handlebar=new THREE.Mesh(new THREE.TorusGeometry(.09,.012,8,24,Math.PI),new THREE.MeshStandardMaterial({color:0x9caaa8,metalness:.15,roughness:.5}));handlebar.name='Bicycle curved handlebar';handlebar.position.set(.39,1.005,0);handlebar.rotation.x=Math.PI/2;bicycle.add(handlebar);
+const rug=new THREE.Mesh(new THREE.BoxGeometry(2.6,.015,1.6),new THREE.MeshStandardMaterial({color:0x7f989a,roughness:1}));rug.name='Faded blue woven rug';rug.position.set(0,.008,1.35);scene.add(rug);
+const shelf=new THREE.Mesh(new THREE.BoxGeometry(1.1,.055,.24),new THREE.MeshStandardMaterial({color:0xb28a60,roughness:.8}));shelf.name='Simple wall shelf';shelf.position.set(1.72,1.83,-2.77);scene.add(shelf);
+const bookBlue=new THREE.Mesh(new THREE.BoxGeometry(.09,.29,.17),new THREE.MeshStandardMaterial({color:0x688995,roughness:.9}));bookBlue.name='Blue shelf book';bookBlue.position.set(1.42,2.003,-2.75);scene.add(bookBlue);
+const bookOchre=new THREE.Mesh(new THREE.BoxGeometry(.08,.24,.17),new THREE.MeshStandardMaterial({color:0xc4a06a,roughness:.9}));bookOchre.name='Ochre shelf book';bookOchre.position.set(1.535,1.978,-2.75);scene.add(bookOchre);
+const bookCream=new THREE.Mesh(new THREE.BoxGeometry(.065,.27,.17),new THREE.MeshStandardMaterial({color:0xe0d5ba,roughness:.9}));bookCream.name='Cream shelf book';bookCream.position.set(1.64,1.993,-2.75);bookCream.rotation.z=-.08;scene.add(bookCream);
+
+// The camera stays seated and only rotates. The chair is clear of the desk.
+const chairSeat=new THREE.Mesh(roundedChairGeometry(.53,.51,.09,.09),new THREE.MeshStandardMaterial({color:0x71858e,roughness:.94}));chairSeat.name='Rounded grey-blue office chair seat';chairSeat.position.set(0,.48,2.02);chairSeat.rotation.set(-Math.PI/2,0,0);chairSeat.castShadow=true;chairSeat.receiveShadow=true;scene.add(chairSeat);
+const chairBack=new THREE.Mesh(roundedChairGeometry(.49,.62,.075,.09),new THREE.MeshStandardMaterial({color:0x71858e,roughness:.94}));chairBack.name='Plain high office chair back';chairBack.position.set(0,.85,2.36);chairBack.rotation.set(-.08,0,0);chairBack.castShadow=true;scene.add(chairBack);
+const chairBackSupport=new THREE.Mesh(new THREE.BoxGeometry(.06,.38,.05),new THREE.MeshStandardMaterial({color:0x566872,roughness:.75}));chairBackSupport.name='Office chair back support';chairBackSupport.position.set(0,.52,2.38);chairBackSupport.rotation.set(-.08,0,0);scene.add(chairBackSupport);
+const chairStem=new THREE.Mesh(new THREE.CylinderGeometry(.032,.043,.30,24),new THREE.MeshStandardMaterial({color:0x566872,metalness:.12,roughness:.6}));chairStem.name='Office chair central swivel stem';chairStem.position.set(0,.285,2.02);chairStem.castShadow=true;scene.add(chairStem);
+const chairHub=new THREE.Mesh(new THREE.CylinderGeometry(.075,.075,.06,24),new THREE.MeshStandardMaterial({color:0x566872,roughness:.75}));chairHub.name='Office chair five-star hub';chairHub.position.set(0,.12,2.02);scene.add(chairHub);
+const chairSpokeOne=new THREE.Mesh(new THREE.BoxGeometry(.045,.035,.31),new THREE.MeshStandardMaterial({color:0x566872,roughness:.75}));chairSpokeOne.name='Chair base spoke one';chairSpokeOne.position.set(0,.105,1.855);scene.add(chairSpokeOne);
+const chairSpokeTwo=new THREE.Mesh(new THREE.BoxGeometry(.045,.035,.31),new THREE.MeshStandardMaterial({color:0x566872,roughness:.75}));chairSpokeTwo.name='Chair base spoke two';chairSpokeTwo.position.set(.1569,.105,1.969);chairSpokeTwo.rotation.y=-1.256637;scene.add(chairSpokeTwo);
+const chairSpokeThree=new THREE.Mesh(new THREE.BoxGeometry(.045,.035,.31),new THREE.MeshStandardMaterial({color:0x566872,roughness:.75}));chairSpokeThree.name='Chair base spoke three';chairSpokeThree.position.set(.097,.105,2.1535);chairSpokeThree.rotation.y=-2.513274;scene.add(chairSpokeThree);
+const chairSpokeFour=new THREE.Mesh(new THREE.BoxGeometry(.045,.035,.31),new THREE.MeshStandardMaterial({color:0x566872,roughness:.75}));chairSpokeFour.name='Chair base spoke four';chairSpokeFour.position.set(-.097,.105,2.1535);chairSpokeFour.rotation.y=-3.769911;scene.add(chairSpokeFour);
+const chairSpokeFive=new THREE.Mesh(new THREE.BoxGeometry(.045,.035,.31),new THREE.MeshStandardMaterial({color:0x566872,roughness:.75}));chairSpokeFive.name='Chair base spoke five';chairSpokeFive.position.set(-.1569,.105,1.969);chairSpokeFive.rotation.y=-5.026548;scene.add(chairSpokeFive);
+const chairWheelOne=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.048,20),new THREE.MeshStandardMaterial({color:0x414f55,roughness:.9}));chairWheelOne.name='Chair caster one';chairWheelOne.position.set(0,.056,1.70);chairWheelOne.rotation.z=Math.PI/2;scene.add(chairWheelOne);
+const chairWheelTwo=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.048,20),new THREE.MeshStandardMaterial({color:0x414f55,roughness:.9}));chairWheelTwo.name='Chair caster two';chairWheelTwo.position.set(.3043,.056,1.9211);chairWheelTwo.rotation.set(0,-1.256637,Math.PI/2);scene.add(chairWheelTwo);
+const chairWheelThree=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.048,20),new THREE.MeshStandardMaterial({color:0x414f55,roughness:.9}));chairWheelThree.name='Chair caster three';chairWheelThree.position.set(.1881,.056,2.2789);chairWheelThree.rotation.set(0,-2.513274,Math.PI/2);scene.add(chairWheelThree);
+const chairWheelFour=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.048,20),new THREE.MeshStandardMaterial({color:0x414f55,roughness:.9}));chairWheelFour.name='Chair caster four';chairWheelFour.position.set(-.1881,.056,2.2789);chairWheelFour.rotation.set(0,-3.769911,Math.PI/2);scene.add(chairWheelFour);
+const chairWheelFive=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.048,20),new THREE.MeshStandardMaterial({color:0x414f55,roughness:.9}));chairWheelFive.name='Chair caster five';chairWheelFive.position.set(-.3043,.056,1.9211);chairWheelFive.rotation.set(0,-5.026548,Math.PI/2);scene.add(chairWheelFive);
+
+const AmbientLight=new THREE.AmbientLight(0xffffff,.6);AmbientLight.name='AmbientLight';AmbientLight.userData.__m3d_default=1;scene.add(AmbientLight);
+const DirectionalLight=new THREE.DirectionalLight(0xffffff,2.2);DirectionalLight.name='DirectionalLight';DirectionalLight.position.set(-2,4,2);DirectionalLight.userData.__m3d_default=1;scene.add(DirectionalLight);
+const sky_2=new THREE.Mesh(new THREE.SphereGeometry(400,32,15,0,6.2832,0,3.1416),new THREE.MeshBasicMaterial({color:0xffffff,side:1,depthWrite:false,toneMapped:false,map:m3dSkyDomeTexture()}));sky_2.name='sky';scene.add(sky_2);
+const ground_2=new THREE.Mesh(new THREE.PlaneGeometry(100,100,1,1),new THREE.MeshStandardMaterial({color:0xffffff,roughness:.95,metalness:0,side:2,map:m3dCheckerTexture()}));ground_2.name='ground';ground_2.position.set(0,-1.0653,0);ground_2.rotation.set(-1.5708,0,0);ground_2.userData.__m3d_phys={collider:'mesh'};scene.add(ground_2);
+
+renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('role','button');renderer.domElement.setAttribute('aria-label','Play A Little Room to Grow — click the monitor, or press Enter');
+renderer.domElement.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvitation();}});
+let roomActive=true;
+addEventListener('message',e=>{if(e.origin===location.origin&&e.source===window.parent&&e.data?.type==='cambridge-room-active')roomActive=e.data.active===true;});
+renderer.domElement.addEventListener('pointerdown',e=>{dragging=true;startX=lastX=e.clientX;startY=lastY=e.clientY;moved=0;renderer.domElement.setPointerCapture(e.pointerId);});
+renderer.domElement.addEventListener('pointermove',e=>{if(dragging){const dx=e.clientX-lastX,dy=e.clientY-lastY;moved+=Math.abs(dx)+Math.abs(dy);yaw-=dx*.0025;pitch=THREE.MathUtils.clamp(pitch-dy*.0025,-1.42,.65);lastX=e.clientX;lastY=e.clientY;}else{const r=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);raycaster.setFromCamera(pointer,camera);renderer.domElement.style.cursor=raycaster.intersectObject(screen).length?'pointer':'grab';}});
+renderer.domElement.addEventListener('pointerup',e=>{dragging=false;if(moved<7){const r=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);raycaster.setFromCamera(pointer,camera);if(raycaster.intersectObject(screen).length)openInvitation();}});
+renderer.domElement.addEventListener('pointercancel',()=>{dragging=false;});
+document.getElementById('close').addEventListener('click',()=>notice.style.display='none');
+addEventListener('keydown',e=>{if(e.code==='Escape')notice.style.display='none';});
+addEventListener('resize',resize);
+controls.update();
+renderer.setAnimationLoop(()=>{if(!roomActive)return;const dt=Math.min(clock.getDelta(),.1);time+=dt;controls.update();renderer.render(scene,camera);});
+</script>
+</body>
+</html>

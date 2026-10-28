@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Zhiang Wang; Wen Xiao - Co-creators"><meta name="theme-color" content="#3a6253"><meta name="description" content="A four-week interactive pixel story about everyday choices, a flower, and a little support."><title>A Little Room to Grow</title><style>__CSS__</style></head><body>
+<a class="skip" href="#actions" data-text="skip"></a>
+<div class="outer">
+<header class="brandbar"><a href="https://www.cambridge-pledge.org/" target="_blank" rel="noopener" id="brand-link"><img class="logo" data-logo alt="The Cambridge Pledge" width="162" height="67"></a><div class="top-right"><div class="lab">CapCut × EAST2046 × CamVAR<span data-text="lab"></span></div><nav class="preferences" aria-label="Preferences"><div class="language-switch"><button data-lang="zh" lang="zh-CN">中文</button><button data-lang="en" lang="en">EN</button></div><button id="sound-toggle" class="sound-toggle" aria-pressed="true"></button><label class="volume-label"><span id="volume-label" class="sr"></span><input id="volume" type="range" min="0" max="100" step="5" value="40" aria-labelledby="volume-label"></label></nav></div></header>
+<section id="welcome" class="welcome" aria-labelledby="welcome-title"></section>
+<main id="game-main" tabindex="-1" hidden>
+<section class="hero"><div><p class="eyebrow" data-text="eyebrow"></p><h1 data-text="title"></h1><p class="hero-sub" data-text="subtitle"></p></div><p class="intro" data-text="intro"></p></section>
+<div class="play-layout"><section class="left-column" id="scene-section">
+<div class="scene-shell"><div class="scene-top"><span class="scene-location" data-text="location"></span><span class="scene-week" id="scene-week"></span></div><canvas id="room" class="scene-canvas" width="960" height="720" role="img"></canvas><div class="scene-bottom"><span id="scene-mood"></span><span class="scene-weather" data-text="weather"></span></div></div>
+<div class="scene-caption"><span class="chapter" id="chapter"></span><div><h2 id="story-title"></h2><p id="story-text"></p></div></div>
+<div class="goals"><div class="goal"><span class="goal-icon">▤</span><div><span class="goal-kicker" data-text="goal1Label"></span><strong data-text="goal1"></strong><small data-text="goal1Hint"></small></div></div><div class="goal"><span class="goal-icon flower-icon">✿</span><div><span class="goal-kicker" data-text="goal2Label"></span><strong data-text="goal2"></strong><small data-text="goal2Hint"></small></div></div></div>
+<details class="evidence"><summary data-text="familyEvidence"></summary><div id="family-evidence"></div></details>
+<details class="rules" id="rules"><summary data-text="allRules"></summary><div id="rules-content"></div></details>
+</section>
+<section class="console" id="console">
+<div class="status-bar" id="status-bar"><div class="weekline"><div><div class="round" id="round-label"></div><h2 id="week-label"></h2></div><div class="weeks" aria-hidden="true" id="week-dots"></div></div><div id="support-strip"></div>
+<div class="resources" id="resources"><div class="resource" id="res-energy"><label data-text="energyLabel"></label><strong id="energy"></strong><sub id="capacity-note"></sub><div class="meter"><i id="energy-meter"></i></div></div><div class="resource" id="res-money"><label data-text="moneyLabel"></label><strong id="money"></strong><sub id="gap"></sub><div class="meter"><i id="money-meter"></i></div></div><div class="resource" id="res-flower"><label data-text="flowerLabel"></label><strong id="flower"></strong><sub id="flower-note"></sub><div class="meter"><i id="flower-meter"></i></div></div></div>
+<div class="status-receipt" id="status-receipt" hidden aria-hidden="true"></div></div>
+<div class="status-feedback"><div class="feedback" id="feedback" role="status" aria-live="polite" aria-atomic="true"></div></div>
+<div class="action-film" id="action-film" hidden><canvas id="film" width="600" height="240" role="img"></canvas><div class="film-caption"><span id="film-label"></span><button id="skip-film"></button></div><div class="film-progress"><i></i></div></div>
+<div class="jobline" id="jobline"></div><div class="alerts" id="alerts" role="status" aria-live="polite"></div><div class="storage-error" id="storage-error" hidden data-text="storageError"></div>
+<div class="choice-head"><h3 data-text="choose"></h3><span data-text="immediate"></span></div><div class="actions" id="actions"></div><button class="end-week" id="end-week"></button><p class="end-note" data-text="endNote"></p>
+</section></div></main>
+<footer class="footer"><div><div class="tagline" data-text="tagline"></div><small data-text="prototype"></small></div><div><button id="about-project" data-cmd="intro-open"></button><button id="sources-button" data-text="sourcesButton"></button><button id="restart" data-text="restart"></button></div></footer></div>
+<dialog id="modal" aria-labelledby="modal-title"><div class="modal-tools"><div class="language-switch"><button data-lang="zh" lang="zh-CN">中文</button><button data-lang="en" lang="en">EN</button></div><button id="modal-close" class="close" data-cmd="close">×</button></div><div id="modal-content" class="modal-inner"></div></dialog>
+<script id="game-engine">__ENGINE__</script>
+<script id="game-support-cards">__SUPPORTCARDS__</script>
+<script id="game-content">__CONTENT__</script>
+<script id="game-literature">__LITERATURE__</script>
+<script id="game-audio">__AUDIO__</script>
+<script id="game-scene">__SCENE__</script>
+<script id="game-journey">__JOURNEY__</script>
+<script id="game-endings">__ENDINGS__</script>
+<script id="game-ui">__UI__</script>
+</body></html>

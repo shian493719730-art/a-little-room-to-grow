@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-22",
+  "entry": "3D1",
+  "actualMonitorPointerClickEntersHomepage": true,
+  "originalIntroductionAccessible": true,
+  "originalHomepageBytesPreserved": true,
+  "exitWithoutWinningEnters3D2": true,
+  "originalFailedRoundAndSupportCardsPreserved": true,
+  "support": "volunteer",
+  "actualWinningGamePlayed": true,
+  "winningBillFund": 705,
+  "automatic3D2OnWin": true,
+  "refresh3D2ThenReviewOriginalEnding": true,
+  "reviewDoesNotRedirectAgain": true,
+  "fullReferencesAccessible": true,
+  "languageSwitchSynchronizesShell": true,
+  "completedPlayerKeepsWinningClosingMessage": true,
+  "room2Screenshot": "3d2-success-desktop.png",
+  "originalHomepageSha256": "dcfceac297350ff97cbe542a7043c70f611c022d762a27fd70e3af2d5e10c649",
+  "returningCompletedPlayerCanEnterHomepageWithoutImmediateRedirect": true,
+  "bridgeNewWinOnceAndSubsequentRoundReset": "passed",
+  "entryScreenshot": "3d1-entry-desktop.png"
+}

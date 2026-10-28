@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-22",
+  "fourVariants": [
+    {
+      "variant": "paid",
+      "operations": 618,
+      "storyDurationMs": 5200,
+      "changingStoryAndAmbientFrames": true
+    },
+    {
+      "variant": "flower",
+      "operations": 647,
+      "storyDurationMs": 5200,
+      "changingStoryAndAmbientFrames": true
+    },
+    {
+      "variant": "both",
+      "operations": 642,
+      "storyDurationMs": 5200,
+      "changingStoryAndAmbientFrames": true
+    },
+    {
+      "variant": "win",
+      "operations": 650,
+      "storyDurationMs": 5200,
+      "changingStoryAndAmbientFrames": true
+    }
+  ],
+  "noRepeatedRoom": true,
+  "resultsHaveReadingEntryOnly": true,
+  "referencesAvailableAfterCardChoice": 15,
+  "confirmationScreensChecked": 24,
+  "readingDoesNotApplyOrRedrawSupport": true,
+  "confirmAppliesOnce": true,
+  "pauseResumeReplayAndCleanup": true,
+  "engineUnchanged": true
+}

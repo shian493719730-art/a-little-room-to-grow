@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#d7c9b1">
+  <meta name="description" content="Step into a Cambridge room, play A Little Room to Grow, and grow a future together.">
+  <title>A Little Room to Grow · The Cambridge Room</title>
+  <link rel="stylesheet" href="./integration.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main id="experience">
+    <section id="view-3d1" class="view" aria-label="3D1 — the beginning">
+      <iframe id="frame-3d1" title="3D1 — click the computer Play button to enter" src="./room1.html"></iframe>
+    </section>
+    <section id="view-home" class="view home-view" aria-label="A Little Room to Grow — original homepage" hidden>
+      <nav class="visit-nav" aria-label="Experience navigation">
+        <span id="visit-title">A Little Room to Grow</span>
+        <button id="finish-visit" type="button">End this visit →</button>
+      </nav>
+      <iframe id="frame-home" title="The complete A Little Room to Grow homepage and game"></iframe>
+    </section>
+    <section id="view-3d2" class="view" aria-label="3D2 — growing a future together" hidden>
+      <iframe id="frame-3d2" title="3D2 — a flower for the future"></iframe>
+      <aside class="closing-note" aria-live="polite">
+        <p class="closing-kicker" id="closing-kicker">THE STORY CONTINUES</p>
+        <p class="closing-message" id="closing-message"></p>
+        <p class="closing-save" id="closing-save"></p>
+        <div class="closing-actions">
+          <button id="revisit-home" type="button">Return to the homepage</button>
+          <a href="https://www.cambridge-pledge.org/pledge" target="_blank" rel="noopener noreferrer" id="real-world-action">Explore giving & pledging ↗</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
